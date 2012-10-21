@@ -1,0 +1,6115 @@
+<!doctype html>
+<html lang="en">
+
+<body>﻿
+
+<head>
+
+<meta charset="utf-8" />
+
+<!--<link rel="stylesheet" href="main.css" />-->
+
+<style type="text/css">
+
+*{
+    	font-family:"Courier New", Courier, monospace;
+	bgcolor=#ffffff;
+}
+
+#table_details{
+	text-align:right;
+	font-size:14px;
+	font-weight:bold;
+}
+
+table.gridtable {
+	width:100%;
+	font-size:12px;
+	color:black
+	border-width:1px;
+	border-color:black;
+	border-collapse: collapse;
+}
+
+
+table.gridtable tr {
+	border-width:1px;
+	padding:2px;
+	border-style:solid;
+	border-color:black;
+}
+
+
+table.gridtable td {
+	border-width:1px;
+	padding:2px;
+	border-style:solid;
+	border-color:black;
+	font-size:12px;
+}
+
+table.grid_table {
+	width:100%;
+	font-size:12px;
+      /*font-weight:bold;*/
+	color:black
+	border-width:1px;
+	border-color:black;
+	border-collapse: collapse;
+}
+
+table.grid_table tr {
+	border-width:1px;
+	padding:2px;
+	border-style:solid;
+	border-color:black;
+}
+
+
+table.grid_table td {
+	border-width:1px;
+	padding:2px;
+	border-style:solid;
+	border-color:black;
+	font-size:12px;
+}
+
+#e_in_c{
+	font-weight:bold;
+	color:blue;
+}
+
+#ce_level_1{
+	font-weight:bold;
+	color:brown;
+}
+
+#se{
+	font-weight:bold;
+	color:purple;
+}
+
+#video_setting {
+	width:480px;
+	height:300px;
+	frame-border:0;
+}
+
+	
+#main_leading_stuff{
+	font-size:16px;
+	color:blue;
+}
+	
+#main_leading_stuff_center{
+	font-size:16px;
+	color:blue;
+	text-align:center;
+}
+
+#general_stuff{
+	font-size:12px;
+	color:black;
+	text-align:justify;
+}
+
+#general_stuff_center{
+	font-size:12px;
+	color:black;
+	text-align:center;
+}
+
+#general_stuff_center_bold{
+	font-size:12px;
+	font-weight:bold;
+	color:black;
+	text-align:center;
+}
+
+#posting_dates{
+	color:blue;
+}
+
+#photos_batch{
+	border:0;
+	height:180px;
+	width:140px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#t_diagrams{
+	border:0;
+	height:420px;	
+	width:600px;
+    	display: block;
+    	margin-left: auto;
+    	margin-right: auto;
+
+    
+</style>
+
+
+<script language="JavaScript" type="text/javascript">
+
+    if (document.getElementById)
+	{
+		document.writeln('<style type="text/css">')
+		document.writeln('.main {text-decoration:none; color:black; cursor:hand; cursor:pointer}')
+		document.writeln('span:hover.mainLink {text-decoration:underline; color:red}')
+		document.writeln('.sublinks1 {display:none; padding-left:14px}')
+		document.writeln('.link2 {text-decoration:none; color:blue}')
+		document.writeln('a:hover.link2 {text-decoration:underline; color:red}')
+		document.writeln('</style>')
+	}
+
+	var mainNum = new Array("a1","a2","a3","a4","a5","a6","a7","a8","a9");
+		// at the left you should add a1, a2 etc. for each main link you wish to include
+		// so if you want 3 main links you should add a1, a2, a3 in the format shown
+        // enclosed in double quotes
+	
+	var subNum1 = new Array("b101","b102","b103","b104","b105","b106","b107","b201","b202","b203","b301","b302","b303","b501", "b502", "b503", "b504", "b505", "b506","b601");
+	// at the left you should add b1, b2 etc. for each sub link you wish to include
+        // under one main link, here the first main link. so if you want 4 sub links you
+        // should add b1, b2, b3, b4 in the format shown enclosed in double quotes
+	
+	var subNum2 = new Array("c20301","c20302","c20303","c20304","c20305","c20306","c20307","c20308","c20309","c20310","c20311", "c20312","c20313", "c20314","c20315", "c20316","c20317","c20318","c20319","c20320","c20321","c20322","c20323","c20324","c20325","c20326", "c20327","c20328","c20329","c50101", "c50102", "c50201", "c50202", "c50203", "c50204", "c50205", "c50206", "c50301", "c50302", "c50303", "c50304", "c50305", "c50306", "c50401", "c50402", "c50403", "c50404", "c50405", "c50406", "c50501", "c50502", "c50503", "c50504", "c50505", "c50506", "c50601", "c50602", "c50603", "c50604", "c50605", "c50606");
+    // this is for sub links under the second main link. there are more than 100 sub 
+    // links in this website
+
+	var subNum3 = new Array("d10101","d10102","d10103","d10104","d10105","d10106","d10107","d10201","d10202","d10203","d10204","d10205","d10206","d10401","d10402","d10403","d10404","d10405","d10406","d10407","d10408","d10409","d10410","d10601","d10602","d10603","d10604","d10701","d10702","d10703","d10801","d10802","d10803","d10804","d10901","d10902","d11001","d11002","d11003","d11004","d11101","d11102","d11103","d11104","d11105","d11106","d11201","d11301","d11302","d11303","d11304","d11305","d11306","d11307","d11308","d11309","d11501","d11502","d11503","d11601","d11602","d11603","d11604","d11701","d11801","d11802","d11803","d11804","d11805","d11806","d11807","d11808","d11809","d11901","d11902","d11903","d11904","d11905","d12001","d12002","d12003","d12004","d12005","d12006","d12007","d12008","d12201","d12301","d12501","d12502","d12601","d12602","d20101","d20301","d21901");
+	
+	var subNum4 = new Array("e101011","e101012","e101013","e101014","e101015","e101016","e101017","e101021","e101022","e101023","e101031","e101032","e101041","e101051","e101061","e101062","e101071","e101072","e101073","e102011","e102012","e102013","e102014","e102021","e102022","e102031","e102032","e102041","e102051","e102061","e104011","e104021","e104031","e104041","e104051","e104052","e104061","e104062","e104063","e104071","e104072","e104073","e104074","e104075","e104076","e104077","e104078","e104081","e104082","e104091","e104092","e104093","e104094","e104095","e104096","e104097","e104101","e104102","e106011","e106021","e106022","e106023","e106031","e106032","e106041","e106042","e106043","e107011","e107012","e107013","e107014","e107021","e107031","e107032","e107033","e107034","e108011","e108021","e108022","e108031","e108041","e109011","e109021","e110011","e110012","e110013","e110014","e110015","e110021","e110031","e110032","e110041","e111011","e111012","e111013","e111014","e111015","e111016","e111021","e111031","e111032","e111033","e111041","e111042","e111043","e111044","e111045","e111051","e111061","e112011","e113011","e113012","e113013","e113014","e113021","e113022","e113023","e113024","e113031","e113041","e113051","e113061","e113062","e113063","e113071","e113081","e113091","e113092","e115011","e115012","e115013","e115021","e115022","e115031","e115032","e115033","e116011","e116012","e116021","e116031","e116041","e118011","e118021","e118031","e118032","e118033","e118034","e118041","e118051","e118061","e118071","e118072","e118073","e118081","e118091","e118092","e119011","e119012","e119013","e119014","e119015","e119021","e119022","e119031","e119032","e119033","e119041","e119051","e119052","e119053","e119054","e119055","e119056","e120011","e120021","e120031","e120032","e120041","e120042","e120051","e120061","e120062","e120063","e120071","e120072","e120073","e120074","e120081","e120082","e122011","e123011","e125011","e125021","e126011","e126012","e126013","e126021","e201011","e203011","e219011","e219012");
+		
+	function openClose(menuArray,theID)
+	{
+		for(var i=0; i < menuArray.length; i++)
+		{
+			if (menuArray[i] == theID)
+			{
+				if (document.getElementById(theID).style.display == "block")
+				{
+          			document.getElementById(theID).style.display = "none";
+          			document.getElementById("tick_"+menuArray[i]).innerHTML = "+";
+				}
+				else
+				{
+					document.getElementById(theID).style.display = "block";
+          			document.getElementById("tick_"+menuArray[i]).innerHTML = "-";
+				}
+			}
+			else
+			{
+				document.getElementById(menuArray[i]).style.display = "none";
+         		document.getElementById("tick_"+menuArray[i]).innerHTML = "+";
+			}
+		}
+	}
+
+</script>
+
+</head>
+
+<body>
+
+<table align="center" border="0" width="750" cellpadding="4" cellspacing="2" frame="void" rules="rows" style="background:#ffffff; color:#000000;">
+	<tr>
+		<td style="font-weight:bold; color:black; font-size:49px">
+		<br>
+		<center>Irrigation Department</center>
+		</td>
+	</tr>
+    
+	<tr>
+		<td style="font-size:24px; color:black; line-height:28px">
+			
+<div onClick="openClose(mainNum,'a1')" class="main"><span class="mainLink"><b>Basic Facts</b></span><span id="tick_a1" style="float:right">+</span></div>
+	<div id="a1" class="sublinks1">
+
+
+<div onClick="openClose(subNum1,'b101')" class="main"><span class="mainLink">General Data</span><span id="tick_b101" style="float:right">+</span></div>
+	<div id="b101" class="sublinks1" align="justify" font-size="10px">
+	<table class="grid_table">
+        	<tr>
+                	<td colspan="2">Geographical Area of State</td>
+                	<td>240.93 lakh hectares</td>
+               	</tr>
+       		<tr>
+                	<td colspan="2">Total Culturable Area</td>
+			<td>188.40 lakh hectares</td>
+		</tr>
+		<tr>
+                	<td rowspan="2">Total Sown Area</td>
+                	<td>165.73 lakh hectares (Single Cropping)</td>
+			<td rowspan="2">254.15 lakh hectares</td>
+
+            	</tr>
+		<tr>
+			<td>88.42 lakh hectares (Double Cropping)</td>
+		</tr>
+		<tr>
+                	<td colspan="2">Irrigation Potential Created</td>
+                	<td>125.45 lakh hectares</td>
+              	</tr>
+        </table>	
+			
+	</div>
+
+
+<div onClick="openClose(subNum1,'b102')" class="main"><span class="mainLink">Canals & Reservoirs</span><span id="tick_b102" style="float:right">+</span></div>
+	<div id="b102" class="sublinks1" align="justify" font-size="10px">
+	<table class="grid_table">
+        	
+		<tr>
+                	<td rowspan="2">Total Length of Canals</td>
+                	<td>72,890.43 Km (Uttar Pradesh)</td>
+			<td rowspan="2">73,996.74 Km</td>
+
+            	</tr>
+		<tr>
+			<td>1,106.31 Km (Other States)</td>
+		</tr>
+		<tr>
+                	<td colspan="2">Main Canals</td>
+                	<td>4,424.85 Km</td>
+              	</tr>
+		<tr>
+                	<td colspan="2">Branches</td>
+                	<td>7,370.94 Km</td>
+              	</tr>
+		<tr>
+                	<td colspan="2">Distributaries</td>
+                	<td>23,862.97 Km</td>
+              	</tr>
+		<tr>
+                	<td colspan="2">Minors</td>
+                	<td>38,337.98 Km</td>
+              	</tr>
+		<tr>
+                	<td colspan="2">Reservoirs</td>
+                	<td>67</td>
+              	</tr>
+        </table>
+
+	</div>
+
+
+<div onClick="openClose(subNum1,'b103')" class="main"><span class="mainLink">Drains</span><span id="tick_b103" style="float:right">+</span></div>
+	<div id="b103" class="sublinks1" align="justify" font-size="10px">
+	<table class="grid_table">
+
+		<tr>
+                	<td colspan="2">Total Length of Drains</td>
+                	<td>40,225 Km</td>
+               	</tr>
+       		<tr>
+                	<td colspan="2">Total Length of Trunk Drains</td>
+			<td>10,608 Km</td>
+		</tr>
+		<tr>
+	</table>
+
+	Districtwise Number & Length of Drains	
+
+	<table class="grid_table">
+
+		<tr>
+		    <td><b>District</b></td>
+		    <td><b>Number of Drains</b></td>
+		    <td><b>Total Length (Km)</b></td>
+		</tr>
+		<tr>
+		    <td>Agra</td>
+		    <td>38</td>
+		    <td>426.66</td>
+		</tr>
+		<tr>
+		    <td>Allahabad</td>
+		    <td>38</td>
+		    <td>426.66</td>
+		</tr>
+		<tr>
+		    <td>Aligarh</td>
+		    <td>59</td>
+		    <td>851.65</td>
+		</tr>
+		<tr>
+		    <td>Ambedkar Nagar</td>
+		    <td>32</td>
+		    <td>402.80</td>
+		</tr>    
+		<tr>
+		    <td>Auraiyya</td>
+		    <td>38</td>
+		    <td>426.66</td>
+		</tr>
+		<tr>
+		    <td>Azamgarh</td>
+		    <td>66</td>
+		    <td>733.95</td>
+		</tr>
+		<tr>
+		    <td>Barabanki</td>
+		    <td>51</td>
+		    <td>726.85</td>
+		</tr>
+		<tr>
+		    <td>Badaun</td>
+		    <td>4</td>
+		    <td>27.50</td>
+
+		</tr>
+		<tr>
+		    <td>Bahraich</td>
+		    <td>18</td>
+		    <td>219.94</td>
+		</tr>
+		<tr>
+		    <td>Bijnor</td>
+		    <td>14</td>
+		    <td>264.10</td>
+		</tr>
+		<tr>
+		    <td>Ballia</td>
+		    <td>442</td>
+		    <td>767.60</td>
+		</tr>
+		<tr>
+		    <td>Bhimnagar</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Banda District</td>
+		    <td>1</td>
+		    <td>6.80</td>
+		</tr>
+		<tr>
+		    <td>Balrampur</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Bareilly</td>
+		    <td>38</td>
+		    <td>263.93</td>
+		</tr>
+		<tr>
+		    <td>Basti</td>
+		    <td>70</td>
+		    <td>299.83</td>
+		</tr>
+		<tr>
+		    <td>Bulandshahr</td>
+		    <td>47</td>
+		    <td>544.60</td>
+		</tr>
+		<tr>
+		    <td>Chandauli</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Chitrakoot</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Deoria</td>
+		    <td>42</td>
+		    <td>731.70</td>
+		</tr>
+		<tr>   
+		    <td>Etah</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Etawah</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>   
+		    <td>Firozabad</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Farrukhabad</td>
+		    <td>7</td>
+		    <td>177.27</td>
+		</tr>
+		<tr>
+		    <td>Fatehpur</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Faizabad</td>
+		    <td>13</td>
+		    <td>153.50</td>
+		</tr>
+		<tr>
+		    <td>Gautam Buddh Nagar</td>
+		    <td>15</td>
+		    <td>275.42</td>
+
+		</tr>
+		<tr>
+		    <td>Gonda</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Ghazipur</td>
+		    <td>45</td>
+		    <td>445.90</td>
+		</tr>
+		<tr>
+		    <td>Gorakhpur</td>
+		    <td>10</td>
+		    <td>348.00</td>
+		</tr>
+		<tr>
+		    <td>Ghaziabad</td>
+		    <td>18</td>
+		    <td>369.47</td>
+		</tr>
+		<tr>
+		    <td>Hamirpur</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Hardoi</td>
+		    <td>96</td>
+		    <td>1045.81</td>
+		</tr>
+		<tr>
+		    <td>MahaMayaNaga</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Jhansi</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Jyotibaphule Nagar</td>
+		    <td>5</td>
+		    <td>100.40</td>
+
+		</tr>
+		<tr>
+		    <td>Jaunpur District</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Kanpur Dehat</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Kannauj</td>
+		    <td>24</td>
+		    <td>239.20</td>
+		</tr>
+		<tr>
+		    <td>Kanpur Nagar</td>
+		    <td>68</td>
+		    <td>424.43</td>
+		</tr>
+		<tr>
+		    <td>Kashiram Nagar</td>
+		    <td>37</td>
+		    <td>151.39</td>
+		</tr>
+		<tr>
+		    <td>Kaushambi</td>
+		    <td>37</td>
+		    <td>151.39</td>
+		</tr>
+		<tr>
+		    <td>Kushinagar</td>
+		    <td>31</td>
+		    <td>515.55</td>
+		</tr>
+		<tr>
+		    <td>Lalitpur</td>
+		    <td>37</td>
+		    <td>151.39</td>
+		</tr>
+		<tr>
+		    <td>Lakhimpur Kheri</td>
+		    <td>11</td>
+		    <td>217.16</td>
+		</tr>
+		<tr>
+		    <td>Lucknow</td>
+		    <td>39</td>
+		    <td>239.74</td>
+		</tr>
+		<tr>
+		    <td>Mau</td>
+		    <td>108</td>
+		    <td>714.72</td>
+		</tr>
+		<tr>
+		    <td>Meerut</td>
+		    <td>15</td>
+		    <td>290.25</td>
+		</tr>
+		<tr>
+		    <td>Maharajganj</td>
+		    <td>46</td>
+		    <td>570.05</td>
+		</tr>
+		<tr>
+		    <td>Mahoba</td>
+		    <td>39</td>
+		    <td>239.74</td>
+		</tr>
+		<tr>
+		    <td>Meerzapur</td>
+		    <td>39</td>
+		    <td>239.74</td>
+		</tr>
+		<tr>
+		    <td>Moradabad</td>
+		    <td>3</td>
+		    <td>36.00</td>
+		</tr>
+		<tr>
+		    <td>Mainpuri</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Mathura</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Muzaffarnagar</td>
+		    <td>38</td>
+		    <td>452.68</td>
+		</tr>
+		<tr>
+		    <td>Pilibhit</td>
+		    <td>62</td>
+		    <td>453.83</td>
+		</tr>
+		<tr>
+		    <td>Pratapgarh </td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Rampur</td>
+		    <td>6</td>
+		    <td>73.00</td>
+		</tr>
+		<tr>
+		    <td>Raebareli</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Saharannpur</td>
+		    <td>6</td>
+		    <td>73.00</td>
+		</tr>
+		<tr>
+		    <td>Sitapur</td>
+		    <td>8</td>
+		    <td>181.01</td>
+		</tr>
+		<tr>
+		    <td>Shahjahanpur</td>
+		    <td>15</td>
+		    <td>404.85</td>
+		</tr>
+		<tr>
+		    <td>Sant Kabir Nagar</td>
+		    <td>8</td>
+		    <td>76.90</td>
+		</tr>
+		<tr>
+		    <td>Siddharthnagar</td>
+		    <td>139</td>
+		    <td>905.51</td>
+		</tr>
+		</tr>
+		    <td>Sonbhadra</td>
+		    <td>139</td>
+		    <td>905.51</td>
+		</tr>
+		</tr>
+		    <td>Sant Ravidas Nagar</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		</tr>
+		    <td>Sultanpur</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Shravasti</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+		<tr>
+		    <td>Unnao</td>
+		    <td>60</td>
+		    <td>517.71</td>
+		<tr>
+		<tr>
+		     <td>Varanasi</td>
+		    <td></td>
+		    <td></td>
+		</tr>
+
+	</table>
+
+
+	 <a href="http://irrigation-up-drains.tumblr.com">Districtwise Details of Drains</a>	
+			
+	</div>
+
+
+<div onClick="openClose(subNum1,'b104')" class="main"><span class="mainLink">Tubewells, Pump & Lift Canals</span><span id="tick_b104" style="float:right">+</span></div>
+	<div id="b104" class="sublinks1" align="justify" font-size="10px">
+	<table class="grid_table">
+        	<tr>
+                	<td rowspan="2">Functional Tubewells</td>
+			<td>1.0 Cusecs</td>
+			<td>3,163</td>
+                	<td rowspan="2">29,016</td>
+               	</tr>
+       		<tr>
+                	<td>1.5 Cusecs</td>
+			<td>25,157</td>
+		</tr>
+		<tr>
+                	<td rowspan="2">Irrigation Potential</td>
+			<td>1.0 Cusecs @ 50 hectares</td>
+			<td>158.15 hectares</td>
+                	<td rowspan="2">2673.85 hectares</td>
+               	</tr>
+       		<tr>
+                	<td>1.5 Cusecs @ 100 hectares</td>
+			<td>2,515.70 hectares</td>
+		</tr>
+		<tr>
+                	<td colspan="2">Branches</td>
+                	<td>7,370.94 Km</td>
+              	</tr>
+		<tr>
+                	<td colspan="3">Minor Pump Canals</td>
+                	<td>245</td>
+              	</tr>
+		<tr>
+                	<td colspan="3">Minor Pump Canals - Irrigation Potential Created</td>
+                	<td>1,71,740 hectares</td>
+              	</tr>
+		
+        </table>	
+			
+	</div>
+
+<div onClick="openClose(subNum1,'b105')" class="main"><span class="mainLink">Tails</span><span id="tick_b105" style="float:right">+</span></div>
+	<div id="b105" class="sublinks1" align="justify" font-size="10px">
+	<table class="grid_table">
+        	<tr>
+                	<td rowspan="2"><b>Division</b></td>
+                	<td rowspan="2"><b>Number of Tails</b></td>
+			<td colspan="2"><b>Districtwise Number of Tails</b></td>
+		</tr>
+		<tr>
+                	
+			<td><b>District</b></td>
+			<td><b>Number of Tails</b></td>
+               	</tr>
+       		<tr>
+                	<td rowspan="4">Agra</td>
+                	<td rowspan="4">350</td>
+			<td>Mathura</td>
+			<td>131</td>
+		</tr>
+		<tr>
+                	
+			<td>Agra</td>
+			<td>83</td>
+		</tr>
+		<tr>
+                	
+			<td>Mainpuri</td>
+			<td>87</td>
+		</tr>
+		<tr>
+                	
+			<td>Firozabad</td>
+			<td>49</td>
+		</tr>
+
+		<tr>
+                	<td rowspan="4">Aligarh</td>
+                	<td rowspan="4">313</td>
+			<td>Aligarh</td>
+			<td>134</td>
+		</tr>
+		<tr>
+                	
+			<td>Hathras</td>
+			<td>60</td>
+		</tr>
+		<tr>
+                	
+			<td>Etah</td>
+			<td>69</td>
+		</tr>
+		<tr>
+                	
+			<td>Kasganj</td>
+			<td>50</td>
+		</tr>
+		<tr>
+                	<td rowspan="4">Allahabad</td>
+                	<td rowspan="4">1105</td>
+			<td>Fatehpur</td>
+			<td>219</td>
+		</tr>
+		<tr>
+                	
+			<td>Pratapgarh</td>
+			<td>353</td>
+		</tr>
+		<tr>
+                	
+			<td>Allahabad</td>
+			<td>465</td>
+		</tr>
+		<tr>
+                	
+			<td>Kaushambi</td>
+			<td>68</td>
+		</tr>
+		<tr>
+                	<td rowspan="3">Azamgarh</td>
+                	<td rowspan="3">550</td>
+			<td>Mau</td>
+			<td>70</td>
+		</tr>
+		<tr>
+                	
+			<td>Azamgarh</td>
+			<td>384</td>
+		</tr>
+		<tr>
+                	
+			<td>Ballia</td>
+			<td>96</td>
+		</tr>
+		
+		<tr>
+                	<td rowspan="4">Bareilly</td>
+                	<td rowspan="4">387</td>
+			<td>Bareilly</td>
+			<td>176</td>
+		</tr>
+		<tr>
+                	
+			<td>Shahjahanpur</td>
+			<td>121</td>
+		</tr>
+		<tr>
+                	
+			<td>Budaun</td>
+			<td>3</td>
+		</tr>
+		<tr>
+                	
+			<td>Pilibhit</td>
+			<td>87</td>
+		</tr>
+		<tr>
+                	<td rowspan="3">Basti</td>
+                	<td rowspan="3">119</td>
+			<td>Basti</td>
+			<td>34</td>
+		</tr>
+		<tr>
+                	
+			<td>Sant Kabir Nagar</td>
+			<td>14</td>
+		</tr>
+		<tr>
+                	
+			<td>Siddhartha Nagar</td>
+			<td>71</td>
+		</tr>
+		
+		<tr>
+                	<td rowspan="4">Chitrakoot Dham</td>
+                	<td rowspan="4">673</td>
+			<td>Hamirpur</td>
+			<td>239</td>
+		</tr>
+		<tr>
+                	
+			<td>Banda</td>
+			<td>209</td>
+		</tr>
+		<tr>
+                	
+			<td>Chitrakoot Dham</td>
+			<td>127</td>
+		</tr>
+		<tr>
+                	
+			<td>Mahoba</td>
+			<td>98</td>
+		</tr>
+		<tr>
+                	<td rowspan="4">Devipatan</td>
+                	<td rowspan="4">241</td>
+			<td>Balrampur</td>
+			<td>78</td>
+		</tr>
+		<tr>
+                	
+			<td>Gonda</td>
+			<td>42</td>
+		</tr>
+		<tr>
+                	
+			<td>Baharaich</td>
+			<td>88</td>
+		</tr>
+		<tr>
+                	
+			<td>Shravasti</td>
+			<td>33</td>
+		</tr>
+		<tr>
+                	<td rowspan="5">Faizabad</td>
+                	<td rowspan="5">1124</td>
+			<td>Faizabad</td>
+			<td>112</td>
+		</tr>
+		<tr>
+                	
+			<td>Sultanpur</td>
+			<td>200</td>
+		</tr>
+		<tr>
+                	
+			<td>Ambedkarnagar</td>
+			<td>130</td>
+		</tr>
+		<tr>
+                	
+			<td>Barabanki</td>
+			<td>301</td>
+		</tr>
+		<tr>
+                	
+			<td>Amethi</td>
+			<td>381</td>
+		</tr>
+		<tr>
+                	<td rowspan="4">Gorakhpur</td>
+                	<td rowspan="4">496</td>
+			<td>Gorakhpur</td>
+			<td>63</td>
+		</tr>
+		<tr>
+                	
+			<td>Maharajganj</td>
+			<td>128</td>
+		</tr>
+		<tr>
+                	
+			<td>Kushinagar</td>
+			<td>57</td>
+		</tr>
+		<tr>
+                	
+			<td>Deoria</td>
+			<td>248</td>
+		</tr>
+		<tr>
+                	<td rowspan="3">Jhansi</td>
+                	<td rowspan="3">727</td>
+			<td>Lalitpur</td>
+			<td>225</td>
+		</tr>
+		<tr>
+                	
+			<td>Jhansi</td>
+			<td>198</td>
+		</tr>
+		<tr>
+                	
+			<td>Jalaun</td>
+			<td>304</td>
+		</tr>
+		
+		<tr>
+                	<td rowspan="6">Kanpur</td>
+                	<td rowspan="6">547</td>
+			<td>Kanpur City</td>
+			<td>137</td>
+		</tr>
+		<tr>
+                	
+			<td>Ramabainagar</td>
+			<td>142</td>
+		</tr>
+		<tr>
+                	
+			<td>Farrukhabad</td>
+			<td>24</td>
+		</tr>
+		<tr>
+                	
+			<td>Etawah</td>
+			<td>106</td>
+		</tr>
+		<tr>
+                	
+			<td>Auraiyya</td>
+			<td>87</td>
+		</tr>
+		<tr>
+                	
+			<td>Kannauj</td>
+			<td>51</td>
+		</tr>
+		<tr>
+                	<td rowspan="6">Lucknow</td>
+                	<td rowspan="6">1288</td>
+			<td>Lucknow</td>
+			<td>174</td>
+		</tr>
+		<tr>
+                	
+			<td>Unnao</td>
+			<td>276</td>
+		</tr>
+		<tr>
+                	
+			<td>Raebareli</td>
+			<td>380</td>
+		</tr>
+		<tr>
+                	
+			<td>Sitapur</td>
+			<td>176</td>
+		</tr>
+		<tr>
+                	
+			<td>Hardoi</td>
+			<td>205</td>
+		</tr>
+		<tr>
+                	
+			<td>Lakhimpur Khiri</td>
+			<td>77</td>
+		</tr>
+		
+		<tr>
+                	<td rowspan="5">Meerut</td>
+                	<td rowspan="5">457</td>
+			<td>Meerut</td>
+			<td>72</td>
+		</tr>
+		<tr>
+                	
+			<td>Baghpat</td>
+			<td>37</td>
+		</tr>
+		<tr>
+                	
+			<td>Ghaziabad</td>
+			<td>77</td>
+		</tr>
+		<tr>
+                	
+			<td>Gautambuddha Nagar</td>
+			<td>70</td>
+		</tr>
+		<tr>
+                	
+			<td>Bulandshahr</td>
+			<td>201</td>
+		</tr>
+		<tr>
+                	<td rowspan="3">Meerzapur</td>
+                	<td rowspan="3">411</td>
+			<td>Meerzapur</td>
+			<td>298</td>
+		</tr>
+		<tr>
+                	
+			<td>Sonbhadra</td>
+			<td>90</td>
+		</tr>
+		<tr>
+                	
+			<td>Sant Ravidas Nagar</td>
+			<td>23</td>
+		</tr>
+		
+		<tr>
+                	<td rowspan="4">Moradabad</td>
+                	<td rowspan="4">385</td>
+			<td>Bijnore</td>
+			<td>227</td>
+		</tr>
+		<tr>
+                	
+			<td>Moradabad</td>
+			<td>57</td>
+		</tr>
+		<tr>
+                	
+			<td>Rampur</td>
+			<td>93</td>
+		</tr>
+		<tr>
+                	
+			<td>JP Nagar</td>
+			<td>08</td>
+		</tr>
+		<tr>
+                	<td rowspan="2">Saharanpur</td>
+                	<td rowspan="2">207</td>
+			<td>Saharanpur</td>
+			<td>79</td>
+		</tr>
+		<tr>
+                	
+			<td>Muzaffarnagar</td>
+			<td>128</td>
+		</tr>
+		
+		<tr>
+                	<td rowspan="4">Varanasi</td>
+                	<td rowspan="4">1074</td>
+			<td>Varanasi</td>
+			<td>62</td>
+		</tr>
+		<tr>
+                	
+			<td>Chandauli</td>
+			<td>366</td>
+		</tr>
+		<tr>
+                	
+			<td>Jaunpur</td>
+			<td>340</td>
+		</tr>
+		<tr>
+                	
+			<td>Ghazipur</td>
+			<td>306</td>
+		</tr>
+
+		<tr>
+                	<td rowspan="3">Other States</td>
+                	<td rowspan="3">55</td>
+			<td>Haridwar</td>
+			<td>28</td>
+		</tr>
+		<tr>
+                	
+			<td>Udham Singh Nagar</td>
+			<td>16</td>
+		</tr>
+		<tr>
+                	
+			<td>Madhya Pradesh</td>
+			<td>11</td>
+		</tr>
+		<tr>
+                	
+			<td colspan="3">Grand Total</td>
+			<td>10510</td>
+		</tr>
+		
+        </table>	
+			
+	</div>
+
+<div onClick="openClose(subNum1,'b106')" class="main"><span class="mainLink">T-Diagrams</span><span id="tick_b106" style="float:right">+</span></div>
+	<div id="b106" class="sublinks1" align="justify" font-size="10px">
+	
+
+		 <a href="http://irrigation-up-t-diagrams.tumblr.com">Districtwise T-Diagrams</a>
+
+
+	</div>
+
+<div onClick="openClose(subNum1,'b107')" class="main"><span class="mainLink">Geographical Distribution of Zones</span><span id="tick_b107" style="float:right">+</span></div>
+	<div id="b107" class="sublinks1" align="justify">
+	
+		
+	<a href="http://i1064.photobucket.com/albums/u361/spgoyal/Irrigation/Zones%20-%20Map/Zones-Irrigation-18-08-2012_zps11949427.jpg" target="_blank"><img src="http://i1064.photobucket.com/albums/u361/spgoyal/Irrigation/Zones%20-%20Map/Zones-Irrigation-18-08-2012_zps11949427.jpg" id="t_diagrams" alt="Zones of Irrigation Department"></a> 	
+
+
+	</div>
+
+
+
+
+	   
+	</div>
+	<hr/>
+	
+
+<div onClick="openClose(mainNum,'a2')" class="main"><span class="mainLink"><b>Officers</b></span><span id="tick_a2" style="float:right">+</span></div>
+	<div id="a2" class="sublinks1">
+
+	<div onClick="openClose(subNum1,'b201')" class="main"><span class="mainLink">Engineer-in-Chiefs</span><span id="tick_b201" style="float:right">+</span></div>
+	<div id="b201" class="sublinks1" align="justify" font-size="10px">
+	
+	<table class="gridtable" id="e_in_c">
+        	<tr>
+                	<td>Ashok Kumar Ojha</td>
+                	<td>E-in-C and Head of Department</td>
+                	<td>+91 9415088765</td>
+						<td>eincididuplu-up@nic.in</td>
+			</tr>
+       	<tr>
+                	<td>Awadh Naresh Gupta</td>
+                	<td>E-in-C (Design & Planning)</td>
+                	<td>+91 9450910966</td>
+						<td>eincdpiduplu-up@nic.in</td>
+        	</tr>
+			<tr>
+                	<td>Diwakar Singh</td>
+                	<td>E-in-C (Projects)</td>
+                	<td>+91 9415822714</td>
+						<td></td>
+        	</tr>
+    </table>
+	
+	</div>
+
+
+<div onClick="openClose(subNum1,'b202')" class="main"><span class="mainLink">Chief Engineers - Level 1</span><span   id="tick_b202" style="float:right">+</span></div> 
+	<div id="b202" class="sublinks1" align="justify" font-size="10px">			 
+	<table class="gridtable" id="ce_level_1"> 
+        	<tr> 
+                	<td>Yogendra Krishna Dubey </td> 
+                	<td>Chief Engineer</td> 
+                	<td>+91 9450886701</td> 
+						<td></td> 
+
+         </tr> 
+       	<tr> 
+                	<td>Krishna Kumar</td> 
+                	<td>Chief Engineer (East)</td> 
+                	<td>+91 9410059513</td> 
+						<td>ceeastiduplu-up@nic.in</td>
+	  	  
+
+         </tr> 
+			<tr> 
+                	<td>Satyavir Singh</td> 
+                	<td>Technical Adviser (PACT)</td> 
+                	<td>+91 9559995182</td> 
+						<td>cepactiduplu-up@nic.in</td>
+	  	  	</tr> 
+			<tr> 
+                	<td>Akhlakh Ahmad</td> 
+                	<td>Chief Engineer (Design & Research)</td> 
+                	<td>+91 9236975333</td> 
+						<td>cednriduplu-up@nic.in</td> 
+			
+	      </tr> 
+       	<tr> 
+                	<td>Chandra Mohan Arora</td> 
+                	<td>Chief Engineer (West)</td> 
+                	<td>+91 9410844020</td> 
+						<td>cewestiduplu-up@nic.in</td> 
+
+  			</tr> 
+			<tr> 
+                	<td>Atul Kumar Rohatgi</td> 
+                	<td>Chief Engineer (Planning)</td> 
+                	<td>+91 9219799267</td> 
+						<td>ceplanningiduplu-up@nic.in</td> 
+         </tr> 
+  			<tr> 
+                	<td>Anand Mohan Prasad</td> 
+                	<td>Chief Engineer (Projects)</td> 
+                	<td>+91 9415205512</td> 
+						<td>anandkritarth@gmail.com</td> 
+        	</tr> 
+     		<tr> 
+                	<td>Satya Kumar Markandey</td> 
+                	<td>Director (SWRaDAC)</td> 
+                	<td>+91 9415412821</td> 
+						<td></td> 
+        	</tr> 
+			<tr> 
+                	<td>Abrar Ahmad</td> 
+                	<td>Managing Director, UP PCL</td> 
+                	<td>+91 8004588136</td> 
+						<td></td>
+        	</tr> 
+			<tr> 
+                	<td>Radha Charan</td> 
+                	<td>Irrigation & Drainage Expert, SWaRA</td> 
+                	<td>+91 9415231390</td> 
+						<td></td> 
+        	</tr> 
+       		
+	</table> 
+
+	</div> 
+
+
+ 
+
+
+
+	<div onClick="openClose(subNum1,'b203')" class="main"><span class="mainLink">Chief Engineers - Level 2</span><span id="tick_b203" style="float:right">+</span></div> 
+	<div id="b203" class="sublinks1"> 
+
+
+
+<div onClick="openClose(subNum2,'c20301')" class="main"><span class="mainLink">Chief Engineer (Ganga), Meerut </span><span id="tick_c20301" style="float:right">+</span></div> 
+				<div id="c20301" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        		<tr> 
+                	<td><b>Arvind Kumar Gupta</b></td> 
+                	<td><b>Chief  Engineer</b></td> 
+                	<td><b>+91 9457231111</b></td> 
+						<td><b>cegangaidupme-up@nic.in</b></td> 
+
+            </tr> 
+       		<tr id="se"> 
+                	<td>Jai Prakash Kulshrastra</td> 
+                	<td>SSO, Meerut</td> 
+                	<td>+91 9411254357</td> 
+						<td>ssogangaidupme-up@nic.in</td> 
+
+            </tr> 
+				<tr id="se"> 
+                	<td>Chandra Kumar Verma</td> 
+                	<td>SE, Meerut</td> 
+                	<td>+91 9451409333</td> 
+						<td>seiwc1idupme-up@nic.in</td> 
+
+            </tr> 
+				<tr> 
+                	<td>Darshan Dayal</td> 
+                	<td>EE. Meerut</td> 
+                	<td>+91 9411296240</td> 
+						<td></td> 
+
+            </tr> 
+       		<tr> 
+                	<td>Hridaya Narayan Singh</td> 
+                	<td>EE, Hapur</td> 
+                	<td>+91 9415523998</td> 
+						<td>eemdgcidupme-up@nic.in</td> 
+
+            </tr> 
+				<tr> 
+                	<td>Anil Kumar Bansal</td> 
+                	<td>EE, Mujaffarnagar</td> 
+                	<td>+91 9837371208</td> 
+						<td>eemdgcidupmu-up@nic.in</td> 
+
+            </tr> 
+				<tr> 
+            	 	<td>Rakesh Kumar Jain</td> 
+                	<td>EE, Meerut</td> 
+                	<td>+91 9412887071</td> 
+						<td>eeicdidupmu-up@nic.in</td> 
+
+            </tr> 				
+				<tr> 
+                	<td>B.D. Sharma</td> 
+                	<td>EE, Meerut</td> 
+                	<td>+91 9897733903</td> 
+						<td></td> 
+				</tr> 
+				<tr> 
+                	<td>U.K. Bansal</td> 
+                	<td>EE, Meerut</td> 
+                	<td>+91 9758648539</td> 
+						<td></td> 
+
+            </tr>             	
+            	
+            	
+            	
+		<tr id="se">
+                	<td>Tribhun Kumar Goyal</td> 
+                	<td>SE, Meerut</td> 
+                	<td>+91 9412782094</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>R.B.S. Bhadauriya</td> 
+                	<td>EE, Meerut</td> 
+                	<td>+91 9412256184</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Prabhudutt Sharma</td> 
+                	<td>EE, Muzaffarnagar</td> 
+                	<td>+91 9412416767</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rakesh Kumar Jain</td> 
+                	<td>EE, Bagpat</td> 
+                	<td>+91 9412887071</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Trilok Chandra Sharma</td> 
+                	<td>EE, Roorki</td> 
+                	<td>+91 9412280268</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Pramod Prakash</td> 
+                	<td>EE, Roorki</td> 
+                	<td>+91 9450148126</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Anil Kumar (Dhama)</td> 
+                	<td>SE, Sharanpur</td> 
+                	<td>+91 9997977020</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Maharaj Singh Kasana</td> 
+                	<td>EE, Sharanpur</td> 
+                	<td>+91 9411065274</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Veer Pal Singh</td> 
+                	<td>EE, Muzaffarnagar</td> 
+                	<td>+91 9411064949</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Mohan Pal Singh Verma</td> 
+                	<td>EE, Sharanpur</td> 
+                	<td>+91 9415017983</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ram Kishore Tyagi</td> 
+                	<td>EE, Sharanpur</td> 
+                	<td>+91 9411464522</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">  
+                	<td>Sandeep Agarwal</td> 
+                	<td>SE, Aligarh</td> 
+                	<td>+91 9412203930</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Shansar Pal Singh</td> 
+                	<td>EE, Aligarh</td> 
+                	<td>+91 9412579699</td> 
+			<td>akojha1954@gmail.com</td> 
+ 
+            	</tr> 
+		<tr> 
+                	<td>Rakesh Yadav</td> 
+                	<td>EE, Bulandsahar</td> 
+                	<td>+91 9648920626</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Abdul Latif</td> 
+                	<td>EE, Firojabad</td> 
+                	<td>+91 9411803169</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se">  
+                	<td>Narendra Pal Singh</td> 
+                	<td>SE, Mathura</td> 
+                	<td>+91 7895276774</td> 
+			<td>akojha1954@gmail.com</td> 
+
+       		<tr> 
+                	<td>Shahid Ali Kha</td> 
+                	<td>EE, Khurja</td> 
+                	<td>+91 9456241460</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Jugdeesh Narayan Sharma</td> 
+                	<td>EE, Mathura</td> 
+                	<td>+91 9651070160</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Tatsat Sharma</td> 
+                	<td>EE, Hathras</td> 
+                	<td>+91 9415000000</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se">  
+                	<td>Kunal Kulshrestra</td> 
+                	<td>SE, Agra</td> 
+                	<td>+91 9412064022</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ramakant</td> 
+                	<td>EE, Agra</td> 
+                	<td>+91 9457059974</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Shiv Kumar Singhal</td> 
+                	<td>EE, Mathura</td> 
+                	<td>+91 9837010255</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rajishwar Singh</td> 
+                	<td>EE, Okhala</td> 
+                	<td>+91 9717282274</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rais Ahamad</td> 
+                	<td>EE, Mathura</td> 
+                	<td>+91 9911680405</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Sudheer Kumar Sharma</td> 
+                	<td>SE, Meerut</td> 
+                	<td>+91 9350277887</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Roop Singh Yadav</td> 
+                	<td>EE, Roorki</td> 
+                	<td>+91 9808180879</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vinod Kumar Mishra</td> 
+                	<td>EE, Ghaziabad</td> 
+                	<td>+91 9412613553</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+<div onClick="openClose(subNum2,'c20302')" class="main"><span class="mainLink">Chief Engineer, Ramganga, Kanpur</span><span id="tick_c20302" style="float:right">+</span></div> 
+				<div id="c20302" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Awadh Kumar Singh</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9005222983</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Ashok Kumar Sharma</td> 
+                	<td>SSO, Kanpur</td> 
+                	<td>+91 9837960456</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Ranveer Singh</td> 
+                	<td>SE, Kanpur</td> 
+                	<td>+91 9410238598</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Nanhak Ram</td> 
+                	<td>EE, Kanpur</td> 
+                	<td>+91 9651370831</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Suresh Chandra Sharma</td> 
+                	<td>EE, Mainpuri</td> 
+                	<td>+91 9412349722</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ratiram Verma</td> 
+                	<td>EE, Farukhabad</td> 
+                	<td>+91 9412377487</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Hari Mohan Singh</td> 
+                	<td>SE, Aligarh</td> 
+                	<td>+91 9412360502</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Balram Singh Yadav</td> 
+                	<td>EE, Aligarh</td> 
+                	<td>+91 9411865958</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Shiv Mangal Yadav</td> 
+                	<td>EE, Eta</td> 
+                	<td>+91 9415156429</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Shiv Mangal Yadav</td> 
+                	<td>EE, Kashiram Nagar</td> 
+                	<td>+91 9415156429</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Ashok Kumar Singhal</td> 
+                	<td>SE, Kanpur</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rakesh Kumar Gupta</td> 
+                	<td>EE, Ramabai Nagar</td> 
+                	<td>+91 9415131401</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Kaptan Singh</td> 
+                	<td>EE, Fatehpur</td> 
+                	<td>+91 9450128814</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Om Prakesh Verma</td> 
+                	<td>EE, Fatehpur</td> 
+                	<td>+91 9450406510</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>B.K.Singh</td> 
+                	<td>EE, Kaushanbi</td> 
+                	<td>+91 9415193480</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Kulgeet Singh</td> 
+                	<td>SE, Etawah</td> 
+                	<td>+91 9411471630</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Zeyaul Hasan Khan</td> 
+                	<td>EE, Etawah</td> 
+                	<td>+91 9411870111</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Jugdeesh Kumar Sharma</td> 
+                	<td>EE, Etawah</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+ 
+            	</tr> 
+       		<tr> 
+                	<td>Vinod Kumar Nirangan</td> 
+                	<td>EE, Auraia</td> 
+                	<td>+91 8765176297</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Damodar Upadhaya</td> 
+                	<td>SE, Kanpur</td> 
+                	<td>+91 9839236646</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Surendra Kumar Pal</td> 
+                	<td>EE, Kanpur</td> 
+                	<td>+91 9956419298</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Mahendra Kumar Nigam</td> 
+                	<td>EE, Kanpur</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+		</tr> 
+		<tr> 
+                	<td>Saudan Singh</td> 
+                	<td>EE, Kannauj</td> 
+                	<td>+91 9456605788</td> 
+			<td>akojha1954@gmail.com</td> 
+
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+
+<div onClick="openClose(subNum2,'c20303')" class="main"><span class="mainLink">Chief Engineer, Poorviganga, Moradabad</span><span id="tick_c20303" style="float:right">+</span></div> 
+				<div id="c20303" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Krishna Pal Singh</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 8954061356</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td> </td> 
+                	<td>SSO, Muradabad</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+ 
+            	</tr> 
+		<tr id="se"> 
+                	<td>Devendra Swaroop</td> 
+                	<td>SE, Bijnor</td> 
+                	<td>+91 9412856423</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Brijesh Chandra</td> 
+                	<td>EE, Bijnor</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Ajay Kumar Verma</td> 
+                	<td>EE, Nazibabad</td> 
+                	<td>+91 9415237256</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Pradumn Kumar Sharma</td> 
+                	<td>EE, Nazibabad</td> 
+                	<td>+91 9412476637</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">
+                	<td>Arun Khear</td> 
+                	<td>SE, Haridwar</td> 
+                	<td>+91 9690163930</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Anurag Agarwal</td> 
+                	<td>EE, Nazibabad</td> 
+                	<td>+91 9045990622</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Suresh Kumar Sapra</td> 
+                	<td>EE, Haridwar</td> 
+                	<td>+91 9412146322</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Lakhmendra Kumar</td> 
+                	<td>EE, Bijnoor</td> 
+                	<td>+91 9456043200</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Nagesh Kumar Sharma</td> 
+                	<td>SE, Kalagarh</td> 
+                	<td>+91 9411024907</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Peush Chandra Gaur</td> 
+                	<td>EE, Kalagarh</td> 
+                	<td>+91 9412903717</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Gyan Singh</td> 
+                	<td>EE, Kalagarh</td> 
+                	<td>+91 9456993084</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Upendra Kumar Bansal</td> 
+                	<td>SE, Moradabad</td> 
+                	<td>+91 9758648539</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Nandishwar Jain</td> 
+                	<td>EE, Dhanpur</td> 
+                	<td>+91 9410241118</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Vinod Kumar Garg</td> 
+                	<td>EE, Rampur</td> 
+                	<td>+91 9412116931</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rajesh Yadav</td> 
+                	<td>EE, Moradabad</td> 
+                	<td>+91 9450588119</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rakesh Kumar</td> 
+                	<td>EE, Moradabad</td> 
+                	<td>+91 9410014463</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Sandeep Kumar</td> 
+                	<td>SE, Bareilly</td> 
+                	<td>+91 9411919893</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Dinesh Kumar Jain</td> 
+                	<td>EE, Badaun</td> 
+                	<td>+91 9412680890</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Krishna Kumar Sharma</td> 
+                	<td>EE, Bareilly</td> 
+                	<td>+91 7579086999</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+
+
+		 
+		<div onClick="openClose(subNum2,'c20304')" class="main"><span class="mainLink">Chief Engineer, Betwa, Jhansi</span><span id="tick_c20304" style="float:right">+</span></div> 
+				<div id="c20304" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Santosh Kumar</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9415059642</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Basant Kumar Jain</td> 
+                	<td>SSO, Jhansi</td> 
+                	<td>+91 9415438737</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Sabber Ahamad</td> 
+                	<td>SE, Jhansi</td> 
+                	<td>+91 9450111095</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ajeet Kumar Verma</td> 
+                	<td>EE, Jhansi</td> 
+                	<td>+91 7379149088</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Nirmal Kumar Saxena</td> 
+                	<td>EE, Jhansi</td> 
+                	<td>+91 9412068295</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Murari Lal Agarwal</td> 
+                	<td>EE, Jhansi</td> 
+                	<td>+91 9452596408</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Raghubeer Singh</td> 
+                	<td>EE, Jhansi</td> 
+                	<td>+91 9450371550</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Akhilesh Kumar</td> 
+                	<td>EE, Orai</td> 
+                	<td>+91 9415564110</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Chandraveer</td> 
+                	<td>EE, Orai</td> 
+                	<td>+91 9452378330</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">
+                	<td>Gopal Singh</td> 
+                	<td>SE, Lalitpur</td> 
+                	<td>+91 9411065930</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Akhilesh Kumar Singh</td> 
+                	<td>EE, Lalitpur</td> 
+                	<td>+91 9415173544</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Shyam Sundar</td> 
+                	<td>EE, Lalitpur</td> 
+                	<td>+91 9412877896</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Ajay Kumar Jha</td> 
+                	<td>EE, Jhansi</td> 
+                	<td>+91 9450079504</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Ghanshyam Das Gupta</td> 
+                	<td>SE, Banda</td> 
+                	<td>+91 9411691315</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Kailesh Narayan Gupra</td> 
+                	<td>EE, Banda</td> 
+                	<td>+91 9450908158</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Karmendra Kumar Agarwal</td> 
+                	<td>EE, Banda</td> 
+                	<td>+91  </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Sandeep Kumar Gupta</td> 
+                	<td>EE, Karvi</td> 
+                	<td>+91 9415400688</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vijay Kumar Agarwal</td> 
+                	<td>EE, Mahoba</td> 
+                	<td>+91 9919858610</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+
+
+		 
+		<div onClick="openClose(subNum2,'c20305')" class="main"><span class="mainLink">Chief Engineer, Sharda, Lucknow</span><span id="tick_c20305" style="float:right">+</span></div> 
+				<div id="c20305" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Swadesh Prakash Jain</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9410664857</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Hari Mohan Singh</td> 
+                	<td>SSO, Sharda</td> 
+                	<td>+91 9415021623</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">
+                	<td>Sandeep Kumar</td> 
+                	<td>SE, Bareilly</td> 
+                	<td>+91 9411919893</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ramdutt Yadav</td> 
+                	<td>EE, Bareilly</td> 
+                	<td>+91 9450927333</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Anil Kumar Singh Sangar</td> 
+                	<td>EE, Bareilly</td> 
+                	<td>+91 9412034219</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Daljeet Singh</td> 
+                	<td>EE, Bareilly</td> 
+                	<td>+91 9415591376</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Jeevanram Yadav</td> 
+                	<td>EE, Pilibhit</td> 
+                	<td>+91 9450494935</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se">  
+                	<td>Bharat Kishore Sinha</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9415259273</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Chendra Sekhar Gupta</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 8765786362</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Om Prakesh Verma</td> 
+                	<td>EE, Hardoi</td> 
+                	<td>+91 9415069704</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Virendra Kumar</td> 
+                	<td>EE, Hardoi</td> 
+                	<td>+91 9005455623</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Jaipal Singh</td> 
+                	<td>EE, Unnao</td> 
+                	<td>+91 9889016518</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Atul Kumar</td> 
+                	<td>EE, Unnao</td> 
+                	<td>+91 9450037989</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">  
+                	<td>Mukesh Sharma</td> 
+                	<td>SE, Shitapur</td> 
+                	<td>+91 9651659570</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Devendra Pal Singh</td> 
+                	<td>EE, Shitapur</td> 
+                	<td>+91  </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Surendra Kumar Yadav</td> 
+                	<td>EE, Lakhimpur</td> 
+                	<td>+91 9415233667</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Mohd.Abu Talib</td> 
+                	<td>EE, Shahjahanpur</td> 
+                	<td>+91 9936059627</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rakesh Chandra Sharma</td> 
+                	<td>EE, Shahjahanpur</td> 
+                	<td>+91 9415782404</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Abdul Latif Kha</td> 
+                	<td>SE, Kheri</td> 
+                	<td>+91 9415182925</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Bhanu Pratap Singh</td> 
+                	<td>EE, Pilibhit</td> 
+                	<td>+91 9415850724</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Mohd Uvais Siddiqui</td> 
+                	<td>EE, Kheri</td> 
+                	<td>+91 9919314683</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+
+<div onClick="openClose(subNum2,'c20306')" class="main"><span class="mainLink">Chief Engineer, Sharda Sahayak</span><span id="tick_c20306" style="float:right">+</span></div> 
+				<div id="c20306" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Shashi Kant Sharma</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9415066183</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Raman Kumar Srivastava</td> 
+                	<td>SSO, Sharda Sahayak</td> 
+                	<td>+91 9415001910</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Girjesh Sharma</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9412445269</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Sanjay Khanduja</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9336284092</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Jai Prakash Singh</td> 
+                	<td>EE, Barabanki</td> 
+                	<td>+91 9415577020</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">
+                	<td>Vishvraj Mehrotra</td> 
+                	<td>SE, Faizabad</td> 
+                	<td>+91 9415014879</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Abhimanu Tiwari</td> 
+                	<td>EE, Faizabad</td> 
+                	<td>+91 9450530153</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Alok Sinha</td> 
+                	<td>EE,Tanda</td> 
+                	<td>+91 9415224701</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Jitendra Kumar Lal</td> 
+                	<td>EE, Barabanki</td> 
+                	<td>+91 9917414894</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Brambhdev Singh Yadav</td> 
+                	<td>EE, Faizabad</td> 
+                	<td>+91 9451745011</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Dhirendra Singh Yadav</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9411211757</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ramashanker</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9415004764</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rajendra Kumar Jain</td> 
+                	<td>Raibareilly</td> 
+                	<td>+91 9565627732</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Dhirendra Singh Yadav</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9411211757</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Virendra Kumar Maurya</td> 
+                	<td>EE, Shitapur</td> 
+                	<td>+91 9415254423</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Arjun Prasad</td> 
+                	<td>EE, Lakhimpuri Kheri</td> 
+                	<td>+91 9450282752</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Lakhan Lal Gupta</td> 
+                	<td>SE, Azamgarh</td> 
+                	<td>+91 9452275433</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Subash Chandra</td> 
+                	<td>EE, Azamgarh</td> 
+                	<td>+91 9838742247</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Brajesh Chandra Lal</td> 
+                	<td>EE, Sultanpur</td> 
+                	<td>+91 9415188912</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Banarshi Singh Yadav</td> 
+                	<td>EE, Azamgarh</td> 
+                	<td>+91 9415160073</td> 
+			<td>akojha1954@gmail.com</td> 
+ 
+            	</tr> 
+		<tr id="se">
+                	<td>Saroj Kumar Upadhayay</td> 
+                	<td>SE, Pratapgarh </td> 
+                	<td>+91 9415240775</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Dinesh Kumar Mishra</td> 
+                	<td>EE, Pratapgarh</td> 
+                	<td>+91 9415289945</td> 
+			<td>akojha1954@gmail.com</td> 
+
+       		<tr> 
+                	<td>Mohd Ekbal Siddiqui</td> 
+                	<td>EE, Raibareilly</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Ramashankar Prasad Gupta</td> 
+                	<td>SE, Allahabad</td> 
+                	<td>+91 9415861028</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Shashikant Kumar Pridarshi</td> 
+                	<td>EE, Allahabad</td> 
+                	<td>+91 9415122166</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Arun Kumar</td> 
+                	<td>EE, Allahabad</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Onkar Nath Upadhayay</td> 
+                	<td>EE, Jaunpur</td> 
+                	<td>+91 9450628028</td> 
+			<td>akojha1954@gmail.com</td> 
+		</tr>
+
+	</table>
+	</div>
+
+
+
+	
+		 
+		<div onClick="openClose(subNum2,'c20307')" class="main"><span class="mainLink">Chief Engineer, Sone Varanasi</span><span id="tick_c20307" style="float:right">+</span></div> 
+				<div id="c20307" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Brijesh Kumar Singh</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9451724469</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td> </td> 
+                	<td>SSO, Sone</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Pradeep Kumar Srivastava</td> 
+                	<td>SE, Varanasi</td> 
+                	<td>+91 9415155172</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Upendra Nath Kunvar</td> 
+                	<td>EE, Chandauli</td> 
+                	<td>+91 9451525872</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Kamlapati Singh</td> 
+                	<td>EE, Varanasi</td> 
+                	<td>+91 9473735087</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ram Sajivan</td> 
+                	<td>EE, Varanasi</td> 
+                	<td>+91 9451623647</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Mohd Farid</td> 
+                	<td>EE, Bhadoi</td> 
+                	<td>+91 9415876428</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Jagat Narayan Singh</td> 
+                	<td>SE, Varanasi</td> 
+                	<td>+91 9936570649</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Umashankar Lavania</td> 
+                	<td>EE, Ghazipur</td> 
+                	<td>+91 9634961988</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Sashikant Singh</td> 
+                	<td>EE, Ghazipur</td> 
+                	<td>+91 8423336252</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td> </td> 
+                	<td>EE, Varanasi</td> 
+                	<td>+91  </td> 
+			<td>akojha1954@gmail.com</td> 
+ 
+            	</tr> 
+		<tr id="se"> 
+                	<td>Ashok Kumar Srivastava</td> 
+                	<td>SE, Allahabad</td> 
+                	<td>+91 9450662633</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Kedar Nath</td> 
+                	<td>EE, Allahabad</td> 
+                	<td>+91 9454515773</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rajni Kant Agarwal</td> 
+                	<td>EE, Allahabad</td> 
+                	<td>+91 9452695361</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Jai Prakash Verma</td> 
+                	<td>EE, Allahabad</td> 
+                	<td>+91 9415323478</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Vasudev Singh</td> 
+                	<td>EE, Allahabad</td> 
+                	<td>+91 9415263082</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Sudhakar Tripathi</td> 
+                	<td>SE, Obra</td> 
+                	<td>+91 9936921168</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td> </td> 
+                	<td>EE, Obra</td> 
+                	<td>+91  </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Harandra Kumar</td> 
+                	<td>EE, Pipri</td> 
+                	<td>+91 9450516158</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Jitendra Bahadur Singh</td> 
+                	<td>SE, Mirzapur</td> 
+                	<td>+91 9453370583</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rahat Husain</td> 
+                	<td>EE, Mirzapur</td> 
+                	<td>+91 9335228428</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Awadh Raj Yadav</td> 
+                	<td>EE, Mirzapur</td> 
+                	<td>+91 9415207859</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+       		<tr> 
+                	<td>Rakesh Kumar Gupta</td> 
+                	<td>EE, Chunar</td> 
+                	<td>+91 9415494731</td> 
+			<td>akojha1954@gmail.com</td> 
+ 
+            	</tr> 
+		<tr> 
+                	<td>Kunj Bihari Singh</td> 
+                	<td>EE, Rabartsganj</td> 
+                	<td>+91 9415429692</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rajiv Kumar Singh</td> 
+                	<td>EE, Rabartsganj</td> 
+                	<td>+91 9415892183</td> 
+			<td>akojha1954@gmail.com</td> 
+
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+
+
+		 
+		<div onClick="openClose(subNum2,'c20308')" class="main"><span class="mainLink">Chief Engineer, Gandak, Gorakhpur</span><span id="tick_c20308" style="float:right">+</span></div> 
+				<div id="c20308" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Shambhu Nath Dwivedi</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9415019561</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Satyasheel Singh Bisen</td> 
+                	<td>SSO, Gandak</td> 
+                	<td>+91 9415243656</td> 
+			<td>akojha1954@gmail.com</td> 
+ 
+            	</tr> 
+		<tr id="se">
+                	<td> </td> 
+                	<td>SE, Gorakhpur</td> 
+                	<td>+91  </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Dinesh Singh Sachan</td> 
+                	<td>EE, Gorakhpur</td> 
+                	<td>+91 9415168731</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Baburam Yadav</td> 
+                	<td>EE, Kushinagar</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Dhurandar Singh</td> 
+                	<td>EE, Maharajganj</td> 
+                	<td>+91 9621900106</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rakesh Kumar Saxena</td> 
+                	<td>EE, Dewaria</td> 
+                	<td>+91 9450722337</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Arjun Prasad</td> 
+                	<td>EE, Kushinagar</td> 
+                	<td>+91 9838002771</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Sidh Narayan Sharma</td> 
+                	<td>SE, Gorakhpur</td> 
+                	<td>+91 8004572695</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Bhanupratap Singh</td> 
+                	<td>EE, Kushinagar</td> 
+                	<td>+91 8756222750</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Ram Sajan Verma</td> 
+                	<td>EE, Maharajganj</td> 
+                	<td>+91 9919731399</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Sidh Narayan Sharma</td> 
+                	<td>EE, Gorakhpur</td> 
+                	<td>+91 8004572695</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Suresh Chandra Pandey</td> 
+                	<td>SE, Gorakhpur</td> 
+                	<td>+91 9415062233</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Suryanath Prasad Singh</td> 
+                	<td>EE, Gorakhpur</td> 
+                	<td>+91 9415448581</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rasid Ali</td> 
+                	<td>EE, Gorakhpur</td> 
+                	<td>+91 94152273692</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Doodhnath Ram</td> 
+                	<td>EE, Dewaria</td> 
+                	<td>+91 9452672261</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Umesh Prasad Yadav</td> 
+                	<td>EE, Sant Kabir Nagar</td> 
+                	<td>+91 8765309356</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Asit Kumar Upadhyay</td> 
+                	<td>SE, Basti</td> 
+                	<td>+91 9415639191</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Harinarayan Singh</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 9918482741</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rajbahadur Singh</td> 
+                	<td>EE, Sidharthnagar</td> 
+                	<td>+91 9984012460</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Birendra Pratap Singh</td> 
+                	<td>EE, Sidharthnagar</td> 
+                	<td>+91 9415844123</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Jai Prakash Dwivedi</td> 
+                	<td>SE, Balia</td> 
+                	<td>+91 9415032948</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+		<tr> 
+                	<td>Prem Chandra Yadav</td> 
+                	<td>EE, Balia</td> 
+                	<td>+91 9628042505</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Shiv Prasad Singh</td> 
+                	<td>EE, Mau</td> 
+                	<td>+91 9451562860</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Jai Prakash Yadav</td> 
+                	<td>EE, Balia</td> 
+                	<td>+91 9415392131</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Pradeep Kumar</td> 
+                	<td>EE, Azamgarh</td> 
+                	<td>+91 9452454696</td> 
+			<td>akojha1954@gmail.com</td> 
+
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+
+
+		 
+		<div onClick="openClose(subNum2,'c20309')" class="main"><span class="mainLink">Chief Engineer, Madhya Ganga, Aligarh</span><span id="tick_c20309" style="float:right">+</span></div> 
+				<div id="c20309" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Jyanendra Kumar Sirothia</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9415113455</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Kunvar Pal Singh</td> 
+                	<td>SSO, Madhya Ganga</td> 
+                	<td>+91 9634358425</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Vijay Kumar Singh</td> 
+                	<td>SE, Roorkee</td> 
+                	<td>+91 9999604466</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Krishna Mohan Kansal</td> 
+                	<td>EE, Haridwar</td> 
+                	<td>+91 8909141263</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Kiran Pal Singh Verma</td> 
+                	<td>EE, Haridwar</td> 
+                	<td>+91 9411111500</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Om Prakash Sharma</td> 
+                	<td>EE, Rurki</td> 
+                	<td>+91 9897277773</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Surendra Kumar Garg</td> 
+                	<td>SE, Bulandsahar</td> 
+                	<td>+91 9412912062</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Hardev Singh</td> 
+                	<td>EE, Bulandsahar</td> 
+                	<td>+91 9412596614</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Prathivi Singh</td> 
+                	<td>EE, Garmuktshwar</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ajay Kumar Bansal</td> 
+                	<td>EE, Garmuktshwar</td> 
+                	<td>+91 9219661014</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Anil Kumar Gupta</td> 
+                	<td>SE, Aligarh</td> 
+                	<td>+91 9756894607</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Jujdish Singh</td> 
+                	<td>EE, Aligarh</td> 
+                	<td>+91 9412296090</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Varis Rafi</td> 
+                	<td>EE, Aligarh</td> 
+                	<td>+91 9412302167</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Kishori Lal Gupta</td> 
+                	<td>EE, Muradabad</td> 
+                	<td>+91 9411090890</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ravishankar Srivastava</td> 
+                	<td>SE, Muradabad</td> 
+                	<td>+91 9319928256</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rakesh Kumar Verma</td> 
+                	<td>EE, Amroha</td> 
+                	<td>+91 9412665336</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rajeev</td> 
+                	<td>EE, Amroha</td> 
+                	<td>+91 9410455543</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Bulaki Ram Jain</td> 
+                	<td>EE, Muradabad</td> 
+                	<td>+91 9450575101</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Ashok Kumar Sethi</td> 
+                	<td>SE, Meerut</td> 
+                	<td>+91 9412744727</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vinay Kumar Rathi</td> 
+                	<td>EE, Bijnaur</td> 
+                	<td>+91 9837020364</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Anil Kumar Singhal</td> 
+                	<td>EE, Meerut</td> 
+                	<td>+91 9412257589</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Gyas Alam</td> 
+                	<td>EE, Bulandsahar</td> 
+                	<td>+91 9415194773</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Narendra Singh</td> 
+                	<td>EE, Bijnaur</td> 
+                	<td>+91 9412206401</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Kazim Ali</td> 
+                	<td>EE, Chandausi</td> 
+                	<td>+91 9450655431</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Akhil Raman</td> 
+                	<td>EE, Okhala</td> 
+                	<td>+91 9415569117</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+
+<div onClick="openClose(subNum2,'c20310')" class="main"><span class="mainLink">Chief Engineer, Betwa Pariyojna, Jhansi</span><span id="tick_c20310" style="float:right">+</span></div> 
+				<div id="c20310" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Amar Kumar</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9450300926</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Surendra Kumar Sharma</td> 
+                	<td>SSO, Betwa Pariyojna</td> 
+                	<td>+91 9453142568</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Bhupendra Sharma</td> 
+                	<td>SE, Jhansi</td> 
+                	<td>+91 9450134050</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Deelip Asthana</td> 
+                	<td>EE, Lalitpur</td> 
+                	<td>+91 9453005637</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Masi Ullah Kha</td> 
+                	<td>EE, Lalitpur</td> 
+                	<td>+91 9415243159</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vinay Kumar Srivastava</td> 
+                	<td>EE, Lalitpur</td> 
+                	<td>+91 9415026540</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Avinash Mishra</td> 
+                	<td>EE, Matateela</td> 
+                	<td>+91 9415170258</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Sarvesh Kumar Srivastava</td> 
+                	<td>EE, Jhansi</td> 
+                	<td>+91 9457430627</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vipin Kumar Gupta</td> 
+                	<td>EE, Mahoba</td> 
+                	<td>+91 9412978491</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Chedilal Gupra</td> 
+                	<td>EE, Karvi</td> 
+                	<td>+91 8874500003</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Preem Kishore Satyasangi</td> 
+                	<td>EE, Mahoba</td> 
+                	<td>+91 9795319900</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Santosh Kumar Pandey</td> 
+                	<td>EE, Hamirpur</td> 
+                	<td>+91 9919288882</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rajendra Prasad Yadav</td> 
+                	<td>EE, Mauranipur</td> 
+                	<td>+91 9450024841</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Har Prasad</td> 
+                	<td>SE, Jhansi</td> 
+                	<td>+91 8450315471</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ram Dular Ram</td> 
+                	<td>EE, Jhansi</td> 
+                	<td>+91 9450252061</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Chotay Lal Gautam</td> 
+                	<td>EE, Banda</td> 
+                	<td>+91 9415065731</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+<div onClick="openClose(subNum2,'c20311')" class="main"><span class="mainLink">Chief Engineer, Saryu-I, Faizabad</span><span id="tick_c20311" style="float:right">+</span></div> 
+				<div id="c20311" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Shyoraj Singh</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9415357661</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Munna Lal</td> 
+                	<td>SSO, Saryu-I</td> 
+                	<td>+91 9410280634</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Babu Ram Puskar</td> 
+                	<td>EE, Faizabad</td> 
+                	<td>+91 9451407774</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ramashankar Rai</td> 
+                	<td>EE, Faizabad</td> 
+                	<td>+91 9452565583</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Pradeep Kumar Sharma</td> 
+                	<td>SE, Bahraich</td> 
+                	<td>+91 9412147219</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Devesh Shukla</td> 
+                	<td>EE, Bahraich</td> 
+                	<td>+91 9721218131</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rakshpal Singh</td> 
+                	<td>EE, Nanpara</td> 
+                	<td>+91 9415016941</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rajesh Chandra</td> 
+                	<td>EE, Nanpara</td> 
+                	<td>+91 9415020240</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Mahendra Vikram Singh</td> 
+                	<td>EE, Bahraich</td> 
+                	<td>+91 9415899239</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Sumit Prakash</td> 
+                	<td>SE, Gonda</td> 
+                	<td>+91 9411477642</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Vijay Kumar Kushwaha</td> 
+                	<td>EE, Gonda</td> 
+                	<td>+91 8004858796</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ramayan Prakash</td> 
+                	<td>EE, Balrampur</td> 
+                	<td>+91 8400069168</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Mustak Ahamad</td> 
+                	<td>EE, Gonda</td> 
+                	<td>+91 9415471183</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Preem Prakash Chaudhari</td> 
+                	<td>EE, Haria Basti</td> 
+                	<td>+91 9415792419</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Ramesh Chandra Verma</td> 
+                	<td>SE, Gonda</td> 
+                	<td>+91 9415149191</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Sashi Prakash Shukla</td> 
+                	<td>EE, Gonda</td> 
+                	<td>+91 9415173522</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Dinesh Kumar</td> 
+                	<td>EE, Gonda</td> 
+                	<td>+91 9450105921</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>R. G. Yadav</td> 
+                	<td>EE, Gonda</td> 
+                	<td>+91 9415005685</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Radhay Krishna</td> 
+                	<td>EE, Gonda</td> 
+                	<td>+91 9415467662</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Ramesh Kumar Tripathi</td> 
+                	<td>SE, Bahraich</td> 
+                	<td>+91 9415815539</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ashok Kumar Singh</td> 
+                	<td>EE, Bahraich</td> 
+                	<td>+91 9415379712</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Awadesh Kumar</td> 
+                	<td>EE, Bahraich</td> 
+                	<td>+91 9415030164</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+       		<tr> 
+                	<td>Rajiv Kumar Pandey</td> 
+                	<td>EE, Bahraich</td> 
+                	<td>+91 9415855230</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+       		<tr> 
+                	<td>Shiv Kumar Sharma</td> 
+                	<td>EE, Bahraich</td> 
+                	<td>+91 9415003606</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+       		<tr> 
+                	<td>Kedar Nath Yadav</td> 
+                	<td>EE, Bahraich</td> 
+                	<td>+91 9415922407</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+       		<tr id="se"> 
+                	<td>Jai Prakash Narayan Singh</td> 
+                	<td>SE, Faizabad</td> 
+                	<td>+91 9415245301</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+       		<tr> 
+                	<td>Prabhat Kumar Dubey</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 9415071870</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+       		<tr> 
+                	<td>Mahesh Sharan Deepak</td> 
+                	<td>EE, Gonda</td> 
+                	<td>+91 9415854086</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+       		<tr> 
+                	<td>Vijay Prakash Shukla</td> 
+                	<td>EE, Faizabad</td> 
+                	<td>+91 9415018112</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+
+<div onClick="openClose(subNum2,'c20312')" class="main"><span class="mainLink">Chief Engineer, Saryu-II, Gonda </span><span id="tick_c20312" style="float:right">+</span></div> 
+				<div id="c20312" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Saket Kumar</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9412163505</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td> </td> 
+                	<td>SSO, Saryu-II</td> 
+                	<td>+91 00</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">  
+                	<td>Satyaprya</td> 
+                	<td>SE, Gonda</td> 
+                	<td>+91 9415068870</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Prabhat Kumar</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 9005131008</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Shyamji Chaubay</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 9415876327</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rameshwar Kumar Mishra</td> 
+                	<td>EE, Bansi</td> 
+                	<td>+91 9415385341</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Bipin Kumar</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 9415233915</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Sundar Lal Verma</td> 
+                	<td>EE, Basti </td> 
+                	<td>+91 9415483616</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ajay Kumar Jaiswal</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 9415173240</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">  
+                	<td>Pradeep Kumar Srivastava</td> 
+                	<td>SE, Gonda</td> 
+                	<td>+91 9415157537</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Anil Kumar Srivastava</td> 
+                	<td>EE, Balrampur</td> 
+                	<td>+91 9450356908</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Kumar Viplav</td> 
+                	<td>EE, Balrampur</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+ 
+            	</tr> 
+       		<tr> 
+                	<td>Sheel Chandra Upadhyay</td> 
+                	<td>EE, Balrampur</td> 
+                	<td>+91 9450036468</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Deepak Kumar Singh</td> 
+                	<td>EE, Gonda</td> 
+                	<td>+91 9455034680</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Murab Gola</td> 
+                	<td>EE, Balrampur</td> 
+                	<td>+91 9450205710</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se">  
+                	<td>Krishna Kumar</td> 
+                	<td>SE, Balrampur</td> 
+                	<td>+91 9794961100</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Sanjay Kumar Srivastava</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 8004876699</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Dilip Kumar Chaturvedi</td> 
+                	<td>EE, Gonda</td> 
+                	<td>+91 9450071853</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rajesh Mishra</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 9452697008</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Raghvendra Dev Prasad</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 9336610455</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Dherandra Chaturvedi</td> 
+                	<td>EE, Balrampur</td> 
+                	<td>+91 9506913547</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se">  
+                	<td>Kuldeep Kumar</td> 
+                	<td>SE, Basti</td> 
+                	<td>+91 9453018381</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Prabhakar Prasad</td> 
+                	<td>EE, Bansi</td> 
+                	<td>+91 9451735112</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Lalit Kumar Singh</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 9450658738</td> 
+			<td>akojha1954@gmail.com</td> 
+ 
+            	</tr> 
+		<tr> 
+                	<td>Kamini Kant Rai</td> 
+                	<td>EE, Santkabir Nagar</td> 
+                	<td>+91 9453417248</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Narendra Prasad Singh</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 9415637098</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rakesh Kumar Chaubey</td> 
+                	<td>EE, Santkabir Nagar</td> 
+                	<td>+91 9451256443</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+
+
+		 
+		<div onClick="openClose(subNum2,'c20313')" class="main"><span class="mainLink">Chief Engineer, Bansagar, Allahabad</span><span id="tick_c20313" style="float:right">+</span></div> 
+				<div id="c20313" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Deenanath Singh</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9415273183</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Prafull Chandra Mishra</td> 
+                	<td>SSO, Bansagar</td> 
+                	<td>+91 9453142510</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Shyam Sundar Mishra</td> 
+                	<td>SE, Meerzapur</td> 
+                	<td>+91 9415348668</td> 
+			<td>akojha1954@gmail.com</td> 
+ 
+            	</tr> 
+		<tr> 
+                	<td>Neeraj Kumar</td> 
+                	<td>EE, Meerzapur</td> 
+                	<td>+91 9415178820</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Amit Pranav</td> 
+                	<td>EE, Meerzapur</td> 
+                	<td>+91 9811321651</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Dineshwar Shukla</td> 
+                	<td>EE, Meerzapur</td> 
+                	<td>+91 9450400732</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Avinesh Sahu</td> 
+                	<td>EE, Meerzapur</td> 
+                	<td>+91 9026219340</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se">  
+                	<td>Ajay Kumar Singh</td> 
+                	<td>SE, Meerzapur</td> 
+                	<td>+91 9412665527</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Gyan Prakash Srivastava</td> 
+                	<td>EE, Meerzapur</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vikash Kumar Singh</td> 
+                	<td>EE, Meerzapur</td> 
+                	<td>+91 9415071872</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Ramesh Prasad</td> 
+                	<td>EE, Meerzapur</td> 
+                	<td>+91 9415071882</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Virendra Kumar</td> 
+                	<td>EE, Meerzapur</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se">  
+                	<td>Shri Prakash Shukla</td> 
+                	<td>SE, Meerzapur</td> 
+                	<td>+91 9792158500</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Hari Om Gupta</td> 
+                	<td>EE, Meerzapur</td> 
+                	<td>+91 9452868450</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Chandra Bhan Ram</td> 
+                	<td>EE, Meerzapur</td> 
+                	<td>+91 9452272110</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Prabal Pratap Singh</td> 
+                	<td>EE, Meerzapur</td> 
+                	<td>+91 9450503646</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Prafull Chandra Mishra</td> 
+                	<td>SE, Allahabad</td> 
+                	<td>+91 9453142510</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Giresh Chandra Agarwal</td> 
+                	<td>EE, Allahabad</td> 
+                	<td>+91 9451171439</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Sharda Nand Pandey</td> 
+                	<td>EE, Allahabad</td> 
+                	<td>+91 9415269641</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Santosh Kumar Singh</td> 
+                	<td>EE, Fatehpur</td> 
+                	<td>+91 9453227634</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Lal Man</td> 
+                	<td>EE, Fatehpur</td> 
+                	<td>+91 9956074337</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Vivek Singh</td> 
+                	<td>EE, Allahabad</td> 
+                	<td>+91 8858014200</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+				 
+        </table> 
+
+	</div> 
+
+
+
+		 
+		<div onClick="openClose(subNum2,'c20314')" class="main"><span class="mainLink">Chief Engineer, External Aided Project, Lucknow</span><span id="tick_c20314" style="float:right">+</span></div> 
+				<div id="c20314" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Surendra Singh</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9450903428</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Ratan Ram</td> 
+                	<td>SSO, External Aided</td> 
+                	<td>+91 9935671941</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Om Prakesh</td> 
+                	<td>SE, Kanpur</td> 
+                	<td>+91 9456466525</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Shyam Charan</td> 
+                	<td>EE, Fatehpur</td> 
+                	<td>+91 9450586894</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Imtyajurhaman</td> 
+                	<td>EE, Etah</td> 
+                	<td>+91 9839333996</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rajesh Nandan Bhatt</td> 
+                	<td>EE, Aligarh</td> 
+                	<td>+91 9719428123</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Sabhajeet Verma</td> 
+                	<td>EE, Etawah</td> 
+                	<td>+91 9451917661</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se">
+                	<td>Ratan Ram</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9935671941</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Pyaray Lal Dinkar</td> 
+                	<td>EE, Unnao</td> 
+                	<td>+91 9415318519</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vishnu Kumar Agarwal</td> 
+                	<td>EE, Pratapgarh</td> 
+                	<td>+91 9451072514</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Neeraj Kumar</td> 
+                	<td>EE, Sultanpur</td> 
+                	<td>+91 9415549310</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Bahgauti Prasad</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9335075777</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Praveen Kumar</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9837019546</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Sanjay Kumar</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Paras Ram</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9415091403</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       					 
+        </table> 
+
+	</div> 
+
+
+<div onClick="openClose(subNum2,'c20315')" class="main"><span class="mainLink">Chief Engineer, Water Resources, Lucknow</span><span id="tick_c20315" style="float:right">+</span></div> 
+				<div id="c20315" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Nikhil Kishore</b></td> 
+                	<td><b>Chief Engineer, Water Resources</b></td> 
+                	<td><b>+91 9719722325</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Nitendra Singh</td> 
+                	<td>SSO, Water Resources</td> 
+                	<td>+91 9837231398</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">
+                	<td>Anil Kumar Agarwal</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9415412910</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Aalok Kumar Jain</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9415182173</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Narendra Kumar Gupta</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9936262388</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Dharmveer Singh</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9559578583</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Virendra Paswan</td> 
+                	<td>EE, Unit-1, Lucknow</td> 
+                	<td>+91 9453092862</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Ajay Kumar Trivedi</td> 
+                	<td>EE, Unit-6, Lucknow</td> 
+                	<td>+91 9453602771</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Sanjay Kumar Bhargav</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9889593402</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Ravindra Kumar Garg</td> 
+                	<td>SE, Meerut</td> 
+                	<td>+91 9212304987</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Mahesh Chandra Gaur</td> 
+                	<td>EE, Meerut</td> 
+                	<td>+91 9412867186</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vijay Gupta</td> 
+                	<td>EE, Bareilly</td> 
+                	<td>+91 9411111823</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Bhrambhadeen</td> 
+                	<td>EE, Kanpur</td> 
+                	<td>+91 9415486569</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td> </td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Raj Pal Singh</td> 
+                	<td>SE, Allahabad</td> 
+                	<td>+91 9450503788</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Sunil Kumar</td> 
+                	<td>EE, Mirzapur</td> 
+                	<td>+91 9450179041</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ram Sagar</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 9452100784</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Madhav Ram Agarwal</td> 
+                	<td>EE, Varanasi</td> 
+                	<td>+91 9412293647</td> 
+			<td>akojha1954@gmail.com</td>       	 
+
+            	</tr> 
+					 
+        </table> 
+ 
+	</div> 
+
+
+
+		 
+		<div onClick="openClose(subNum2,'c20316')" class="main"><span class="mainLink">Chief Engineer, Advance Planning, Lucknow</span><span id="tick_c20316" style="float:right">+</span></div> 
+	<div id="c20316" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Shafiq Hussain</b></td> 
+                	<td><b>Chief Engineer, Advance Planning</b></td> 
+                	<td><b>+91 9412145040</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td> </td> 
+                	<td>SSO, Advance Planning</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Brijendra Kumar</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rampreet Prasad</td> 
+                	<td>EE, Unit-4, Lucknow</td> 
+                	<td>+91 9005879765</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Sharad Goyal</td> 
+                	<td>EE, Unit-5, Lucknow</td> 
+                	<td>+91 9026511322</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Narottam Kumar Agarwal</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9335903502</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Kayam Raja Rizvi</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9839829890</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Surya Narayan</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9838994373</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Bhanu Pratap Singh</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9550548505</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vinay Kumar</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9451223545</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Masudal Huk</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9897172586</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vaji Ullah Farukhi</td> 
+                	<td>EE, Unit-2, Lucknow</td> 
+                	<td>+91 9415069440</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Suprabhat Singh</td> 
+                	<td>EE, Unit-3, Lucknow</td> 
+                	<td>+91 9415204740</td> 
+			<td>akojha1954@gmail.com</td>  
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+
+
+		 
+		<div onClick="openClose(subNum2,'c20317')" class="main"><span class="mainLink">Chief Engineer, Investigation & Planning, Lucknow</span><span id="tick_c20317" style="float:right">+</span></div> 
+				<div id="c20317" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Aniurodh Babu Dixit</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9839361300</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td> </td> 
+                	<td>SSO,</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Rakesh Chandra Pandey</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9515020565</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Suresh Chandra Shukla</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9792158500</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rama Kant Verma</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9451896858</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Rajya Pal Singh</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9415017238</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Najmul Hasan</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9415760680</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Prabhat Kumar Singh</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9415229293</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Munna Singh</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9793547896</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Katvaru Prasad Doharay</td> 
+                	<td>EE,Lucknow</td> 
+                	<td>+91 9415282914</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Parasuram</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9415418535</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Paras Nath Ram</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 8009107096</td> 
+			<td>akojha1954@gmail.com</td>  
+
+            	</tr> 
+					 
+        </table> 
+
+	</div> 
+
+
+
+		 
+		<div onClick="openClose(subNum2,'c20318')" class="main"><span class="mainLink">Chief Engineer, Monitoring & Evaluation, Lucknow</span><span id="tick_c20318" style="float:right">+</span></div> 
+				<div id="c20318" class="sublinks1" align="justify"> 
+		<table class="gridtable"> 
+        	<tr> 
+                	<td><b>Umesh Chandra Singh</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9838504323</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Surajpal Singh</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9415133009</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Dinesh Singh</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9415222702</td> 
+			<td>akojha1954@gmail.com</td> 
+ 
+            	</tr> 
+		<tr> 
+                	<td>Mohd Sattar</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9838222479</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Raj Kumar Bhagar</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9935672799</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">
+                	<td>Sewa Ram</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9651816625</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Kuldeep Saroj</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se">
+                	<td>Vijendra Singh</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9411942990</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Krishna Chandra Gupta</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9450369852</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Paras Nath</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9532504692</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Sakal Dev</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9721123812</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Ramesh Chandra</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9450157111</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Dev Raj</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9918569658</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Virendra Kumar</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Nayaj Ahamad</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9452432411</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+
+					 
+        </table> 
+
+	</div> 
+
+
+
+		
+<div onClick="openClose(subNum2,'c20319')" class="main"><span class="mainLink">Chief Engineer, Kanhar, Vindyachal, Meerzapur</span><span id="tick_c20319" style="float:right">+</span></div>
+				<div id="c20319" class="sublinks1" align="justify">
+		<table class="gridtable">
+        	<tr> 
+                	<td><b>Shankar Ram</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9415014722</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Radhika Prasad Tiwari</td> 
+                	<td>SE, Pipri</td> 
+                	<td>+91 9453005574</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Keedar Nath</td> 
+                	<td>Pipri</td> 
+                	<td>+91 9454515773</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ram Aasish Chaurasia</td> 
+                	<td>EE, Pipri</td> 
+                	<td>+91 9450445911</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Vijay Kumar</td> 
+                	<td>EE, Pipri</td> 
+                	<td>+91 9415490495</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+						
+        </table>
+
+	</div>
+
+<div onClick="openClose(subNum2,'c20320')" class="main"><span class="mainLink">Chief Engineer, PACT, Lucknow</span><span id="tick_c20320" style="float:right">+</span></div>
+				<div id="c20320" class="sublinks1" align="justify">
+		<table class="gridtable">
+        	<tr> 
+                	<td><b>Dinesh Kumar Dudeja</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9415314039</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Tara Chandra</td> 
+                	<td>SE, Sultanpur</td> 
+                	<td>+91 9415910095</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Girja Shankar Saroj</td> 
+                	<td>EE, Pratapgarh</td> 
+                	<td>+91 9451943963</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Siddarth Kumar Singh</td> 
+                	<td>EE, Jaunpur</td> 
+                	<td>+91 9415931487</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Bal Kishun Ram</td> 
+                	<td>EE, Sultanpur</td> 
+                	<td>+91 9415208565</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ravindra Singh</td> 
+                	<td>EE, Sultanpur</td> 
+                	<td>+91 9415283883</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Mohd Israyal</td> 
+                	<td>SE, Raibareilly</td> 
+                	<td>+91 9997340615</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Anil Kumar Gupta</td> 
+                	<td>EE, Haidergarh</td> 
+                	<td>+91 9897464030</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ram Pratap Singh</td> 
+                	<td>EE, Amethi</td> 
+                	<td>+91 9415715926</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rajesh Bahadur Ratnakar</td> 
+                	<td>EE, Raibareilly</td> 
+                	<td>+91 9565663017</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td> </td> 
+                	<td>SE, (Rehabilitation Expert) Lucknow</td> 
+                	<td>+91  </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Sudheer Kumar</td> 
+                	<td>EE, PACT</td> 
+                	<td>+91 9450020125</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td> </td> 
+                	<td>EE, (Desigen Unit)</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Yadunath Singh</td> 
+                	<td>EE, PACT</td> 
+                	<td>+91 9415004571</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td> </td> 
+                	<td>EE, (Change Management Expert)</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td> </td> 
+                	<td>EE, (Administratior) PACT</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rajat Agarwal</td> 
+                	<td>EE, (M&E Expert) PACT</td> 
+                	<td>+91 9542739011</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Gyanandra Shyaran</td> 
+                	<td>EE, Training Expert, PACT</td> 
+                	<td>+91 9415392898</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td> </td> 
+                	<td>EE, Basin Planning Expert</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Desraj</td> 
+                	<td>EE, PACT</td> 
+                	<td>+91 9415046883</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Pradeep Kumar Gupta</td> 
+                	<td>EE, PACT</td> 
+                	<td>+91 933591152</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Pramod Kumar Singh</td> 
+                	<td>SE, PIM Expert</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Jai Prakash Bansal</td> 
+                	<td>SE, PACT</td> 
+                	<td>+91 9891111446</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Chandra Dev Ram</td> 
+                	<td>EE,</td> 
+                	<td>+91 9415160589</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Amitabh Kumar</td> 
+                	<td>EE,</td> 
+                	<td>+91 9936071091</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+							
+        </table>
+
+	</div>
+
+
+<div onClick="openClose(subNum2,'c20321')" class="main"><span class="mainLink">Chief Engineer, </span><span id="tick_c20321" style="float:right">+</span></div>
+				<div id="c20321" class="sublinks1" align="justify">
+		<table class="gridtable">
+        	<tr> 
+                	<td><b>Ashok Kumar Saxena</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9415203823</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Girjesh Sharma</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9412445269</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Hardan Singh</td> 
+                	<td>EE, Okhala</td> 
+                	<td>+91 981081906</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Suresh Chandra Sharma</td> 
+                	<td>EE, Kanpur</td> 
+                	<td>+91 9410006291</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr>
+       		 
+		
+					
+        </table>
+
+	</div>
+
+
+
+		
+		<div onClick="openClose(subNum2,'c20322')" class="main"><span class="mainLink">Chief Engineer, Design</span><span id="tick_c20322" style="float:right">+</span></div>
+	<div id="c20322" class="sublinks1" align="justify">
+		<table class="gridtable">
+        	<tr> 
+                	<td><b>Ajay Kumar Mishra</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9450614860</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Tilak Ram Monga</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9412648371</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rakesh Kumar Soni</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9415089447</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+       		<tr> 
+                	<td>Jitendra Kumar Agarwal</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Bal Krishna Shukla</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9415061887</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">
+                	<td>Rama Shankar Gupta</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9450818907</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Chendresh Kumar Jain</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9001483427</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Krishna Dutt Gupta</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9452858823</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>M. Raman Naidu</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9935494975</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Vijendra Kumar Jain</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9956177503</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Lovekush Singh</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Chandra Sekhar Vishwakarma</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9453073010</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Ram Prakesh Deshmukh</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9450951641</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Tilak Ram Monga</td> 
+                	<td>SE, Lucknow</td> 
+                	<td>+91 9412648371</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rajiv Mittal</td> 
+                	<td>EE, Unit-1, Lucknow</td> 
+                	<td>+91 9936565349</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Baljeet</td> 
+                	<td>EE, Unit-2, Lucknow</td> 
+                	<td>+91 9415018826</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+							
+        </table>
+
+	</div>
+
+
+
+		
+		<div onClick="openClose(subNum2,'c20323')" class="main"><span class="mainLink">Chief Engineer, ISO</span><span id="tick_c20323" style="float:right">+</span></div>
+	<div id="c20323" class="sublinks1" align="justify">
+		<table class="gridtable">
+        	<tr> 
+                	<td><b>Rajesh Verma</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9415369097</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Devki Nandan</td> 
+                	<td>SE, ISO</td> 
+                	<td>+91 9450426803</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rajiv Kumar</td> 
+                	<td>EE, ISO</td> 
+                	<td>+91 9451944056</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Rajendra Prasad</td> 
+                	<td>EE, ISO</td> 
+                	<td>+91 9450164314</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rakesh Kumar Gautam</td> 
+                	<td>EE, ISO</td> 
+                	<td>+91 7376581702</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Mukesh Chandra Srivastava</td> 
+                	<td>SE, Computer Center</td> 
+                	<td>+91 9415093341</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Mukesh Chandra Srivastava</td> 
+                	<td>EE, Computer Center</td> 
+                	<td>+91 9415093341</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		
+		
+					
+        </table>
+
+	</div>
+
+
+<div onClick="openClose(subNum2,'c20324')" class="main"><span class="mainLink">Chief Engineer, SWaRa</span><span id="tick_c20324" style="float:right">+</span></div>
+	<div id="c20324" class="sublinks1" align="justify">
+		<table class="gridtable">
+        	<tr> 
+                	<td><b>Radha Charan</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9415231390</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+ 		</tr> 
+       		<tr id="se"> 
+                	<td>Jitendra Kumar Katyal</td> 
+                	<td>SE, SWaRA</td> 
+                	<td>+91 7897173825</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Anil Kumar</td> 
+                	<td>EE, SWaRA</td> 
+                	<td>+91 9450461436</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Anoop Kumar Srivastava</td> 
+                	<td>EE, SWaRA</td> 
+                	<td>+91 9451687373</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Sandeep Kumar Khere</td> 
+                	<td>EE, SWaRA</td> 
+                	<td>+91 9415783973</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+							
+        </table>
+
+	</div>
+
+
+
+		
+		<div onClick="openClose(subNum2,'c20325')" class="main"><span class="mainLink">Chief Engineer, SWaRaDAC</span><span id="tick_c20325" style="float:right">+</span></div>
+				<div id="c20325" class="sublinks1" align="justify">
+		<table class="gridtable">
+        	<tr> 
+                	<td><b>Satya  Kumar Markandey</b></td> 
+                	<td><b>Chief Engineer, SWRaDAC</b></td> 
+                	<td><b>+91 9415412821</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Kulbhusan Dwivedi</td> 
+                	<td>SE, SWRaDAC</td> 
+                	<td>+91 9415028603</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Sanjay Tripathi</td> 
+                	<td>EE, SWRaDAC</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+					
+        </table>
+
+	</div>
+
+<div onClick="openClose(subNum2,'c20326')" class="main"><span class="mainLink">Chief Engineer, Technical & Audit Cell, PWD, Lucknow</span><span id="tick_c20326" style="float:right">+</span></div>
+				<div id="c20326" class="sublinks1" align="justify">
+		<table class="gridtable">
+        	<tr> 
+                	<td><b>Lajpat Rai Adlakha</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9412345510</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ashok Kumar Singh</td> 
+                	<td>EE,PWD</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Chandresh Kumar Bajpai</td> 
+                	<td>EE, PWD</td> 
+                	<td>+91 9415456995</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Krishna Kumar Tripathi</td> 
+                	<td>EE, TAC</td> 
+                	<td>+91 9919163387</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Kulbhusan</td> 
+                	<td>SE, TAC</td> 
+                	<td>+91 9451729511</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vikash Chandra Arya</td> 
+                	<td>EE, Lucknow</td> 
+                	<td>+91 9415011108</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>G.P. Srivastava</td> 
+                	<td>EE, Varanasi</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Himanshu Kumar</td> 
+                	<td>EE, Faizabad</td> 
+                	<td>+91 9415523557</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Govind Chandra</td> 
+                	<td>EE, Gorakhpur</td> 
+                	<td>+91 9415642597</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ashok Kumar</td> 
+                	<td>Agra</td> 
+                	<td>+91 9412590864</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Sangram Singh</td> 
+                	<td>EE, Azamgarh</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Arun Kumar Agarwal</td> 
+                	<td>EE, Bareilly</td> 
+                	<td>+91 9412173534</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ashok Kumar Tyagi</td> 
+                	<td>EE, Meerut</td> 
+                	<td>+91 9412528427</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Chakki Lal Verma</td> 
+                	<td>EE, Chitrakoot</td> 
+                	<td>+91 9450170241</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+       		<tr> 
+                	<td>Ganga Mahesh Shakya</td> 
+                	<td>EE, Kanpur</td> 
+                	<td>+91 9412069570</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Vijay Kumar Sharma</td> 
+                	<td>EE, Muradabad</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Preem Narayan Soni</td> 
+                	<td>EE, Jhansi</td> 
+                	<td>+91 9450269717</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td> </td> 
+                	<td>EE, Saharanpur</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ram Sewak</td> 
+                	<td>EE, Mirzapur</td> 
+                	<td>+91 9415294296</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Keshri Singh</td> 
+                	<td>EE, Allahabad</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Vinay Kumar Singh</td> 
+                	<td>EE, Basti</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Manish Ranjan</td> 
+                	<td>EE, Devipatan</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+					
+        </table>
+
+	</div>
+
+
+<div onClick="openClose(subNum2,'c20327')" class="main"><span class="mainLink">Chief Engineer & Managing Director, UP PCL</span><span id="tick_c20327" style="float:right">+</span></div>
+	<div id="c20327" class="sublinks1" align="justify">
+		<table class="gridtable">
+        	<tr> 
+                	<td><b>Abrar Ahamad</b></td> 
+                	<td><b>Managing Director</b></td> 
+                	<td><b>+91 8004588136</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Jamshed Ahmad Khan</td> 
+                	<td>SE,</td> 
+                	<td>+91 9454419141</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Rakesh Kumar Gupta</td> 
+                	<td>SE,</td> 
+                	<td>+91 9410893983</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td> </td> 
+                	<td>SE</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">
+                	<td> </td> 
+                	<td>SE</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Awadesh Kumar Sharma</td> 
+                	<td>EE,</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Shyad Firoj Akhatar Rizvi</td> 
+                	<td>EE</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Divya Krishna Mishra</td> 
+                	<td>EE</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Alok Jain</td> 
+                	<td>EE</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Pradeep Kumar Pandey</td> 
+                	<td>EE</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		
+					
+        </table>
+
+	</div>
+
+
+<div onClick="openClose(subNum2,'c20328')" class="main"><span class="mainLink">Chief Engineer, WALMI</span><span id="tick_c20328" style="float:right">+</span></div>
+	<div id="c20328" class="sublinks1" align="justify">
+		<table class="gridtable">
+        	<tr> 
+                	<td><b>Om Prakesh Dubey</b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9044461661</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Ramadhar</td> 
+                	<td>SE, Walmi</td> 
+                	<td>+91 9935804925</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Chandrasekhar Goshwami</td> 
+                	<td>EE, Walmi</td> 
+                	<td>+91 9415561017</td> 
+			<td>akojha1954@gmail.com</td> 
+
+ 		</tr> 
+       		<tr> 
+                	<td>Sudheer Kumar Parmar</td> 
+                	<td>EE, Walmi</td> 
+                	<td>+91 9453562902</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Praveen Kumar</td> 
+                	<td>EE, Walmi</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Jitendra Singh Kanaujia</td> 
+                	<td>EE, Walmi</td> 
+                	<td>+91 9415462279</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Ajay Kaushik</td> 
+                	<td>EE, Walmi Okhala</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr id="se">
+                	<td>Shriprakash Saushik</td> 
+                	<td>SE, Jhansi</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ramesh Chandra Agarwal</td> 
+                	<td>EE, Jhansi</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Hradaya Narayan Srivastava</td> 
+                	<td>EE, Bhumi Sudhar Nigam, Lucknow</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Kunj Bihari Lal</td> 
+                	<td>EE, Karagar</td> 
+                	<td>+91 9839992839</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Shailendra Gaur</td> 
+                	<td>EE, Noida</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Rajendra Singh</td> 
+                	<td>EE, DSI, Okhala</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td> </td> 
+                	<td>EE, Delhi Nagar Nigam, New Delhi</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td> </td> 
+                	<td>EE, Mandi Parishad</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		
+		
+					
+        </table>
+
+	</div>
+
+
+<div onClick="openClose(subNum2,'c20329')" class="main"><span class="mainLink">Chief Engineer, State Engineering Academy, Okhla</span><span id="tick_c20329" style="float:right">+</span></div>
+				<div id="c20329" class="sublinks1" align="justify">
+		<table class="gridtable">
+        	<tr> 
+                	<td><b>Brijesh Kumar Mangal<b></td> 
+                	<td><b>Chief Engineer</b></td> 
+                	<td><b>+91 9997031151</b></td> 
+			<td><b>akojha1954@gmail.com</b></td> 
+
+            	</tr> 
+		<tr id="se"> 
+                	<td>Pradeep Kumar Singh</td> 
+                	<td>SE, Okhala</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr id="se"> 
+                	<td>Shy. Taj Muhamad</td> 
+                	<td>SE, Okhala</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Mukul Kumar Jain</td> 
+                	<td>EE, Okhala</td> 
+                	<td>+91 9412021572</td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Ashok Kumar Jindal</td> 
+                	<td>EE, Okhala</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+       		<tr> 
+                	<td>Shrinivash Rawat</td> 
+                	<td>EE, Okhala</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Mahesh Chandra Sharma</td> 
+                	<td>EE, Okhala</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+            	</tr> 
+		<tr> 
+                	<td>Narendra Kumar Jain</td> 
+                	<td>EE, Okhala</td> 
+                	<td>+91 </td> 
+			<td>akojha1954@gmail.com</td> 
+
+
+            	</tr> 
+		
+		
+					
+        </table>
+
+	</div>
+
+
+
+	
+
+	</div>
+		
+
+		
+		
+	</div>
+	<hr/>		
+		
+
+<div onClick="openClose(mainNum,'a3')" class="main"><span class="mainLink"><b>Progress</b></a></span><span id="tick_a3" style="float:right">+</span></div>
+	<div id="a3" class="sublinks1">		
+	  
+	<div onClick="openClose(subNum1,'b301')" class="main"><span class="mainLink">Irrigation Achieved & Revenue Realized</span><span id="tick_b301" style="float:right">+</span></div>
+	<div id="b301" class="sublinks1" align="justify">
+
+	<div id="table_details">Area in Lakh Hectares and Revenue in Rs. Crores</div>
+	
+	<table class="grid_table">
+        	
+		<tr>
+                	<td rowspan="2"><b>Financial Year</b></td>
+                	<td rowspan="2"><b>Fasali Year</b></td>
+			<td colspan="2"><b>Kharif</b></td>
+                	<td colspan="2"><b>Rabi</b></td>
+			<td colspan="2"><b>Total</b></td>
+                	
+               	</tr>
+
+		<tr>
+                	<td><b>Area</b></td>
+                	<td><b>Revenue</b></td>
+			<td><b>Area</b></td>
+                	<td><b>Revenue</b></td>
+			<td><b>Area</b></td>
+                	<td><b>Revenue</b></td>                	
+               	</tr>
+
+
+       		<tr>
+                	<td>1991-1992</td>
+                	<td>1399</td>
+			<td>25.30</td>
+                	<td></td>
+			<td>35.89</td>
+                	<td></td>
+			<td>61.19</td>
+                	<td></td>
+              	</tr>
+		<tr>
+                	<td>1992-1993</td>
+                	<td>1400</td>
+			<td>25.23</td>
+                	<td></td>
+                	<td>35.04</td>
+                	<td></td>
+			<td>60.27</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>1993-1994</td>
+                	<td>1401</td>
+			<td>25.28</td>
+                	<td></td>
+                	<td>37.01</td>
+                	<td></td>
+			<td>62.29</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>1994-1995</td>
+                	<td>1402</td>
+			<td>27.29</td>
+                	<td></td>
+                	<td>37.84</td>
+                	<td></td>
+			<td>65.13</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>1995-1996</td>
+                	<td>1403</td>
+			<td>27.38</td>
+                	<td></td>
+                	<td>33.23</td>
+                	<td></td>
+			<td>60.61</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>1996-1997</td>
+                	<td>1404</td>
+			<td>27.75</td>
+                	<td></td>
+                	<td>35.72</td>
+                	<td></td>
+			<td>63.47</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>1997-1998</td>
+                	<td>1405</td>
+			<td>27.86</td>
+                	<td></td>
+                	<td>25.42</td>
+                	<td></td>
+			<td>53.28</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>1998-1999</td>
+                	<td>1406</td>
+			<td>25.04</td>
+                	<td></td>
+                	<td>31.52</td>
+                	<td></td>
+			<td>56.56</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>1999-2000</td>
+                	<td>1407</td>
+			<td>20.97</td>
+                	<td></td>
+                	<td>22.59</td>
+                	<td></td>
+			<td>43.56</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>2000-2001</td>
+                	<td>1408</td>
+			<td>20.17</td>
+                	<td></td>
+                	<td>20.09</td>
+                	<td></td>
+			<td>40.26</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>2001-2002</td>
+                	<td>1409</td>
+			<td>20.13</td>
+                	<td></td>
+                	<td>22.72</td>
+                	<td></td>
+			<td>42.85</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>2002-2003</td>
+                	<td>1410</td>
+			<td>19.62</td>
+                	<td></td>
+                	<td>23.09</td>
+                	<td></td>
+			<td>42.71</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>2003-2004</td>
+                	<td>1411</td>
+			<td>21.01</td>
+                	<td></td>
+                	<td>25.57</td>
+                	<td></td>
+			<td>46.58</td>
+                	<td></td>
+                	
+               	</tr>
+		<tr>
+                	<td>2004-2005</td>
+                	<td>1412</td>
+			<td>21.14</td>
+                	<td></td>
+                	<td>23.28</td>
+                	<td></td>
+			<td>44.42</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>2005-2006</td>
+                	<td>1413</td>
+			<td>20.95</td>
+                	<td></td>
+                	<td>23.33</td>
+                	<td></td>
+			<td>44.28</td>
+                	<td></td>                	
+               	</tr>
+		<tr>
+                	<td>2006-2007</td>
+                	<td>1414</td>
+			<td>21.35</td>
+                	<td>51.08</td>
+                	<td>23.01</td>
+                	<td>43.53</td>
+			<td>44.36</td>
+                	<td>94.61</td>                	
+               	</tr>
+		<tr>
+                	<td>2007-2008</td>
+                	<td>1415</td>
+			<td>22.69</td>
+                	<td>54.02</td>
+                	<td>26.19</td>
+                	<td>56.63</td>
+			<td>48.88</td>
+                	<td>110.65</td>                	
+               	</tr>
+		<tr>
+                	<td>2008-2009</td>
+                	<td>1416</td>
+			<td>22.60</td>
+                	<td>51.60</td>
+                	<td>29.70</td>
+                	<td>61.68</td>
+			<td>52.30</td>
+                	<td>113.28</td>                	
+               	</tr>
+		<tr>
+                	<td>2009-2010</td>
+                	<td>1417</td>
+			<td>19.95</td>
+                	<td>45.71</td>
+                	<td>28.50</td>
+                	<td>56.07</td>
+			<td>48.45</td>
+                	<td>101.78</td>
+                	
+               	</tr>
+		<tr>
+                	<td>2010-2011</td>
+                	<td>1418</td>
+			<td>24.28</td>
+                	<td>50.77</td>
+                	<td>33.88</td>
+                	<td>60.33</td>
+			<td>58.16</td>
+                	<td>111.10</td>
+                	
+               	</tr>
+		<tr>
+                	<td>2011-2012</td>
+                	<td>1419</td>
+			<td>28.41</td>
+                	<td>56.02</td>
+			<td>42.35</td>
+			<td>75.42</td>
+                	<td>70.76</td>
+			<td>131.44</td>
+                	
+               	</tr>
+		<tr>
+                	<td>2012-2013</td>
+                	<td>1420</td>
+			<td></td>
+                	<td></td>
+                	<td></td>
+                	<td></td>
+                	<td></td>
+			<td></td>
+                </tr>
+
+
+
+        </table>	
+			
+	</div>
+
+<div onClick="openClose(subNum1,'b302')" class="main"><span class="mainLink">Silt Clearance</span><span id="tick_b302" style="float:right">+</span></div>
+	<div id="b302" class="sublinks1" align="justify" font-size="10px">
+	<table class="grid_table">
+        	<tr>
+                	<td><b>Financial Year</b></td>
+                	<td><b>Fasali Year</b></td>
+			<td><b>Departmental (Km)</b></td>
+                	<td><b>District Level (Km)</b></td>
+			<td><b>Total (Km)</b></td>
+                	
+               	</tr>
+       		<tr>
+                	<td>2009-2010</td>
+                	<td>1417</td>
+			<td>5,380</td>
+                	<td>21,074</td>
+			<td>26,454</td>
+                	
+               	</tr>
+		<tr>
+                	<td>2010-2011</td>
+                	<td>1418</td>
+			<td>5,446</td>
+                	<td>22,841</td>
+			<td>28,287</td>
+                	
+               	</tr>
+		<tr>
+                	<td>2011-2012</td>
+                	<td>1419</td>
+			<td>5,463</td>
+                	<td>24,618</td>
+			<td>30,081</td>
+                	
+               	</tr>
+
+		</table>
+	</div>
+
+
+<div onClick="openClose(subNum1,'b303')" class="main"><span class="mainLink">Tail Feeding</span><span id="tick_b303" style="float:right">+</span></div>
+	<div id="b303" class="sublinks1" align="justify" font-size="10px">
+	<table class="grid_table">
+        	<tr>
+                	<td><b>Financial Year</b></td>
+                	<td><b>Fasali Year</b></td>
+			<td><b>Estimated Tails</b></td>
+			<td><b>Target</b></td>
+                	<td><b>Fed Tails</b></td>
+			<td><b>Achievement</b></td>
+			<td><b>Percentage</b></td>
+                	
+               	</tr>
+       		<tr>
+                	<td rowspan="2">2010-2011</td>
+                	<td rowspan="2">1418</td>
+			<td>Kharif</td>
+                	<td>9,686</td>
+			<td>9,337</td>
+			<td>9,007</td>
+			<td>96.4 %</td>
+                	
+               	</tr>
+		<tr>
+                	<td>Rabi</td>
+                	<td>10,123</td>
+			<td>9,800</td>
+			<td>9,163</td>
+			<td>93.5 %</td>
+                	
+               	</tr>
+		<tr>
+                	<td rowspan="2">2011-2012</td>
+                	<td rowspan="2">1419</td>
+			<td>Kharif</td>
+                	<td>9,745</td>
+			<td>9,366</td>
+			<td>9,640</td>
+			<td>103 %</td>
+                	
+               	</tr>
+		<tr>
+                	<td>Rabi</td>
+                	<td>10,183</td>
+			<td>9,812</td>
+			<td>9,657</td>
+			<td>98 %</td>
+                	
+               	</tr>
+	
+		</table>
+	</div>
+
+
+    </div>
+	<hr/>
+		
+		
+
+		
+<div onClick="openClose(mainNum,'a4')" class="main"><span class="mainLink"><b>Blog @ Irrigation in UP</b></a></span><span id="tick_a4" style="float:right">+</span></div>
+	<div id="a4" class="sublinks1"style="font-family:georgia, arial, helvetica, sans-serif; font-size:12px; color:black">	
+
+		<p align = "center" style="color:blue; font-size:16px">These are the most recent blog posts of <a href="http://1989batch.tumblr.com">Irrigation in UP</a> ....</p>
+		<script type="text/javascript" src="http://irrigation-up-blog.tumblr.com/js?num=5"></script>
+		
+	</div>
+	<hr/>
+		
+<div onClick="openClose(mainNum,'a5')" class="main"><span class="mainLink"><b>Irrigation Projects</b></a></span><span id="tick_a5" style="float:right">+</span></div>
+	<div id="a5" class="sublinks1">	
+			
+	<div onClick="openClose(subNum1,'b501')" class="main"><span class="mainLink"><b>National Projects</b></span><span id="tick_b501" style="float:right">+</span></div>
+	<div id="b501" class="sublinks1" align="justify" font-size="10px">
+
+		<div onClick="openClose(subNum2,'c50101')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50101" style="float:right">+</span></div> 
+		<div id="c50101" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50102')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50102" style="float:right">+</span></div> 
+		<div id="c50102" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+	</div>
+
+
+
+	<div onClick="openClose(subNum1,'b502')" class="main"><span class="mainLink"><b>Major Irrigation Projects</b></span><span id="tick_b502" style="float:right">+</span></div>
+	<div id="b502" class="sublinks1" align="justify" font-size="10px">
+
+		<div onClick="openClose(subNum2,'c50201')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50201" style="float:right">+</span></div> 
+		<div id="c50201" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50202')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50202" style="float:right">+</span></div> 
+		<div id="c50202" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		<div onClick="openClose(subNum2,'c50203')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50203" style="float:right">+</span></div> 
+		<div id="c50203" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50204')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50204" style="float:right">+</span></div> 
+		<div id="c50204" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		<div onClick="openClose(subNum2,'c50205')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50205" style="float:right">+</span></div> 
+		<div id="c50205" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50206')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50206" style="float:right">+</span></div> 
+		<div id="c50206" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		
+	</div>
+
+
+	<div onClick="openClose(subNum1,'b503')" class="main"><span class="mainLink"><b>Medium Irrigation Projects</b></span><span id="tick_b503" style="float:right">+</span></div>
+	<div id="b503" class="sublinks1" align="justify" font-size="10px">
+
+		<div onClick="openClose(subNum2,'c50301')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50301" style="float:right">+</span></div> 
+		<div id="c50301" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50302')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50302" style="float:right">+</span></div> 
+		<div id="c50302" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		<div onClick="openClose(subNum2,'c50303')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50303" style="float:right">+</span></div> 
+		<div id="c50303" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50304')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50304" style="float:right">+</span></div> 
+		<div id="c50304" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		<div onClick="openClose(subNum2,'c50305')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50305" style="float:right">+</span></div> 
+		<div id="c50305" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50306')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50306" style="float:right">+</span></div> 
+		<div id="c50306" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		
+	
+
+	</div>
+
+
+	<div onClick="openClose(subNum1,'b504')" class="main"><span class="mainLink"><b>Minor Irrigation Projects</b></span><span id="tick_b504" style="float:right">+</span></div>
+	<div id="b504" class="sublinks1" align="justify" font-size="10px">
+
+		<div onClick="openClose(subNum2,'c50401')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50401" style="float:right">+</span></div> 
+		<div id="c50401" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50402')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50402" style="float:right">+</span></div> 
+		<div id="c50402" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		<div onClick="openClose(subNum2,'c50403')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50403" style="float:right">+</span></div> 
+		<div id="c50403" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50404')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50404" style="float:right">+</span></div> 
+		<div id="c50404" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		<div onClick="openClose(subNum2,'c50405')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50405" style="float:right">+</span></div> 
+		<div id="c50405" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50406')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50406" style="float:right">+</span></div> 
+		<div id="c50406" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		
+
+	</div>
+
+
+	<div onClick="openClose(subNum1,'b505')" class="main"><span class="mainLink"><b>Indo-Nepal Irrigation Projects</b></span><span id="tick_b505" style="float:right">+</span></div>
+	<div id="b505" class="sublinks1" align="justify" font-size="10px">
+
+		<div onClick="openClose(subNum2,'c50501')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50501" style="float:right">+</span></div> 
+		<div id="c50501" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50502')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50502" style="float:right">+</span></div> 
+		<div id="c50502" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		<div onClick="openClose(subNum2,'c50503')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50503" style="float:right">+</span></div> 
+		<div id="c50503" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50504')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50504" style="float:right">+</span></div> 
+		<div id="c50504" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		<div onClick="openClose(subNum2,'c50505')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50505" style="float:right">+</span></div> 
+		<div id="c50505" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50506')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50506" style="float:right">+</span></div> 
+		<div id="c50506" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		
+
+
+
+
+	</div>
+
+<div onClick="openClose(subNum1,'b506')" class="main"><span class="mainLink"><b>Bundelkhand Projects</b></span><span id="tick_b506" style="float:right">+</span></div>
+	<div id="b506" class="sublinks1" align="justify" font-size="10px">
+
+		<div onClick="openClose(subNum2,'c50601')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50601" style="float:right">+</span></div> 
+		<div id="c50601" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50602')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50602" style="float:right">+</span></div> 
+		<div id="c50602" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		<div onClick="openClose(subNum2,'c50603')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50603" style="float:right">+</span></div> 
+		<div id="c50603" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50604')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50604" style="float:right">+</span></div> 
+		<div id="c50604" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		<div onClick="openClose(subNum2,'c50605')" class="main"><span class="mainLink">Saryu</span><span id="tick_c50605" style="float:right">+</span></div> 
+		<div id="c50605" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+
+		<div onClick="openClose(subNum2,'c50606')" class="main"><span class="mainLink">Sharda Sahayak</span><span id="tick_c50606" style="float:right">+</span></div> 
+		<div id="c50606" class="sublinks1" align="justify"> 
+
+
+
+
+
+		</div>
+		
+
+
+
+
+	</div>
+
+
+Tehri Dam Project: River Bhagirathi with its source at Gaumukh (Gangotri) after joining Alaknanda in Deoprayag becomes the Ganga. The Ganga after joining Bhilganga become the mighty river Ganga whose water is to tapped by Tehri Dam after 1.5 Km downstream of Sangam. The excess rain water would be tapped for production of Hydro power/Irrigation/Flood control/Fisheries/Tourism purposes- Hence called the Multipurpose Hydro Electric Project. 
+
+Lakhwar Vyasi Project: This multipurpose project is situated about 72 Km from the district head-quater. The proposed construction :
+
+    A concrete dam 204 Metre high near village lakhwar & 300 Megawatt underground powerhouse.
+
+    A concrete dam 80 Metres high about 5 Km downstream of Lakhwar Dam in village Vyasi.
+
+    With a Water flow in HRT (7 metre diameter X 2.7 Km length) a power is proposed with a capacity of 120 megawatt.
+
+    To balance the effect of above structures a barrage would be constructed near vill Hathiyari about 3 Km downstream.
+
+    With the completion of this project additional 9270 Lac extra electrical energy would suplemented to the existing grid of the state and 40000 Hectares Land would be irrigated
+
+Kishau Dam Project : Proposed abou 95 km from Dehradun on Tons river, one of the tributeries of Yamuna. A concrete gravity dam about 236 meters. Total extra electric power generated will be to the tune 1688.19 x 106. On completion of the project 1.015 maf irrigation water will be available, out of this only 0.515 maf will utilized Eastern Yamuna Canal to irrigate 97076 Hectares of extra land and the rest. 500 maf will be made available for drinking water to Delhi State. The estimated cost as on 1996 estimate was 34.55 crores. 
+
+Sharda Canal system : The Sharda canal was constructed about 60 years ago to projective irrigate the district between Ganga & Ghaghra basin namely Pilibhit, Kheri, sitapur, Shahjhanpur, Hardoi, Unnao, Barabanki, Rae Barielly, Faizabad, Pratapgarh, Sultanpur, Jaunpur, Azamgarh, Ghazipur, Allahabad, & Varanasi . The area earmarked is 20 lac hectares cultivable land, but the capacity used is only 8.82 Lac being about 44.10 % of cultivable land. The upper reaches of canal irrigates about 42 % & the lower reaches irrigates only 19 % of cultivable land, one of the reason being availablity of water in the lower reaches. To make more water available in the central & Eastern districts of Sitapur, Lucknow, Barabanki, Faizabad, Rae Barielly, Pratapgarh, Allahabad, Sultanpur, Jaunpur, Azamgarh, Mau, Varanasi, Ballia and Ghazipur inter basin water resources of Ghagra river is proposed to be tapped. Modernization, concrete lining, construction of Ggaghra, Tanda, Dohrighat and Dalmau Pump Canal. 
+
+Rajghat Dam Project: This dam in Bundelkhand region on river Betwa takes care of Irrigation facilities of Both Uttar Pradesh & Madhya Pradesh State. The financial burden will be borne by both states under the central command of Betwa River Board. This project has been cleared by Central Government. The canal network is proposed to be borne by individual state governments. The Pump canal system of Betwa, Gurshahai and Bargaon is being considered. 
+
+Modhu Dam Poject : This dam in extremely backward district of Hamirpur in Bundelkhand region. 95 % of construction has been completed in Rath Tehsil on Birma River. The reservior capacity is 28234 hectares (1660 hectares Charkharin Pump Canal and 26574 hectares in Moodhaa Main Canal) Land will irrigatable in and 2.8 million cubic metre drinking water would be made available. Initial sanctioned by Central Water Commission for Rs 11723.43 lacs. 
+
+Gunta Nala Dam Project : The Land between Karvi & Mau Tehsil could not fully utilised for shortage of irrigation facilities. The crop pattern is rain fed. Underground water availablity is not so good as be tapped. This Dam on Drought infested zone in village Raeperra on Karvi- Allahabd Highway. This project will irrigate 3880 hactare of cultivable land. 
+
+Pathrai Dam Project: This Earth filled Dam on river Parthari & Sukhnai river in Tehsil Mauranipur, Distt Jhansi will irrgate 2998 hectare of cultivable land. Work is in progress till date. 
+
+Saryu Canal System (Right Bank Ghaghra Canal) : Under this project water from river Ghaghra Right Bank 360 Cubic Metres will flow to join a network of 47.135 Km of canal system to join river Saryu later on. Under this project Ayodhya, Gola, Utraula, Dumeriyaganj Lift Pumping Station to feed the canal is proposed. 
+
+Ban Sagar Project : Under the agreement between the government of Madhya Pradesh, Bihar and Uttar Pradesh water from Sone river out of 14.25 maf Uttar Pradesh will get 1.25 maf. the break up would be 1.00 maf from river Sone and 0.25 maf from river Kanhar. A common feeder channel of 22 km long and capacity of 185 Cu.Metres will bring the water from Sahdoul Distt of Madhya Pradesh to irrigate. Water will reach Uttar Pradesh after passing through 2.20 km long tunnel subsequently the water will reach Adwa river and reach Meja Dam (Length of Link Channel will be 25.3 km) Water thus on reaching will be utilized to irrigate Mirzapur and Allahabad Distt. Baridha Weir is proposed to be converted into a barrage. 
+
+Kanhar Irrigation Project : The proposed earth filled dam on river Kanhar, one of the tributaries of river Sone in Sonebhadra distt. Water thus stored will be utilized by canal to irrigate and drinking water facities of the area and Bihar State. 
+
+Gyanpur Pump Canal Project : Area in the Handiya (Allahabad), Gyanpur (Badhohee) Sadar (Varanasi), Chunar (Mirzapur) area nearly no canal irrigation facilities and reliant only on only on Government/Private Tubewells to irrigate their fields. Due to the above useage the ground water level is also receding. To diminish the above effect 1350 cu sec per second capacity of pump canal is proposed and water would be used by 372.5+74 km of canals for irrigation. 
+
+Modernization of Ghaghar Canal System : Ghaghrol Dam built in 1918 on Karmnasha river, a weir was built to feed Feeder Channel leading to the reservior. To improve water management in the Nagwa Dam was built in 1950. Excess water from this reservior feed the Ghaghar Reservior. To increase the height Nagwa Dam is proposed for better water management during the lean season. 
+
+Tons Pump Canal Project : This lift canal project will lift 17 Cubic metre (600 Cusec) from Tons and will irrigate of Dalkar Bara and Karchana Area. On completion of the main poject 10 pump & and a weir house would be erected to irrrigate further 33155 hectares of land. 
+
+Chithorgarh Reservior Projects : To tap the water resources of 11 small tributaries flowing from Himalaya to join river Rapti. Bhabar nala drain is proposed to have Chittorgarh Reservior which will eventually irrigate 16.098 hectares of land. 
+
+Madhya Ganga Project (First Phase) : Rain water/Flood water in catchment area of river a barrage is proposed about 10 km from Bijnaur. In the first phase right bank Channel of about 115.45 km will deliver 8280 cusec water which will join 190.80 km long Upper Ganga Canal. In between Water will supplied to Anoopshahar Branch ( 900 Cusec.) In Upper Ganga Canal of 239.20 to 2750 Cusec Head discharge to will meet 47.70 km long Mat Branch. 
+
+Eastern Ganga Canal Project: This project has a proposal to cover 105 thousand hectares is Distt Bijnaur and Muradabad. Newly constructed Bhimgoda Barrage (Distt Hardware) left bank will give 137.40 Cu mec, and will cover 48.55 km length of canal. Five different Branches e.g. Chandak, Nazibabad, Nagina, Nahtour, Alawalpur Canal totalling 155.17 km will be used for irrigation facilities. 
+
+Tajewalan (Hathnikund) Barrage Renuvation Project: This (Eastern Yamuna Canal System) canal originates from Yamuna river in Tajewalan left bank (Harayana). This canal irrigates the fields of Shahranpur, Muzaffarnagar, Meerut, and Ghaziabad. This Barrage also feed the Headworks section which altimatemate irrigates the fields of Harayana State. This system being very old needs renuvation works hence a barrage is proposed to be built about 3 km before this barrage at Hathnikund. The cost of the Barrage is to be shared between U.P. & Harayana as per agreement reached. 
+
+Hindon- Krishni Do-aab Project: The revised scheme is to switch over over from proposed lift canal to Gravity Canal System. It is proposed to use 300 Cusec and water from from Eastern Yamuna Canal (Kallarpur) and Loyi Rajbaha to Irrigate 11600 Hectare Area. The estimated cost of the project is 3924.00 Lacs and has been cleared by Central Water Commission vide order dated 10-07-98. Work is in progress. 
+
+Anoop Shahar Branch (Modernization) Project: Initially built in 1876 with a length of 206 km . The water folw at Head works is 1650 cusec. It irrigates 3570 hectares of paddy which is about 2.6% but now after modernization. The proposed modernization is estimated to cost 40.00 Lac. 
+
+Agra Canal Modernization Project: More than a century old Agra Canal starts from Gurgaon (Harayana) crosses Delhi to reach Okhla. From 7.00 Km to 47.00 Km lies in Haryana State and from 47.00 Km to 100.00 Km lies in Uttar Pradesh State. After Modernization the the capacity will be increased from 2200 cusec to 4000 cusec. About 64000 Hectare of paddy is proposed to be irrigated by this project. The formal sanction is still awaited. 
+
+Beewar Feeder Channel : To train the water of River Kali in Distt Etah a barrage and 64.32 km long canal to feed beewar canal which is 73.44 km long for irrigation purposes. The final estimated cost is 4262.02 Lac, financial help from Nabard is also associated with this project. 
+
+Chambal Lift Canal Project: This project situated in dacoit infested area, devoid of formal irrigation facilities. About 450 cusec water will be lifted 26.40 metres in the first phase of Lift Feeder Channel then and a Link Channel of 1.2 Km followed by 26.4 m Lifting and subsequently into a main a canal of 70 Km plus 91 Km Rajbaha. This canal will irrigate 620001 hectares in Agra Distt 51800 and 102001 hectares in Etawah Distt. 
+
+Jarauli Pump Canal Project : Lift pump of this project will lift 400 cusec water and feed the Fatehpur Branch by a 4.7 km long Channel. The object of this pump canal is to feed Lower Ganga canal system to feed the tail end in Fatehpur Distt. This project irrigates 64495 hectares of cultivable land and extra 39748 hectares is the target to be achieved. The estimated cost is 4792 Lacs. 
+
+Jamrani Multipurpose Dam Project : This dam is situated about 10 km from Kathgodam. The proposed Dam is 130.6 metre High Roller Compact Concrete structure. In the first phase a barrage on Gola River and a Feeder Channel and renuvation of the existing canal system is proposed. After completion 89702 hectares land will irrigated, 52.93 million cu metre drinking water and in future 15 megawatt Hydro Electric Power House is proposed. 
+
+Lahchura Head Works : This project consisting of a weir (Bandh) of wooden gates needs modernization. Formal CWC sanction awaited..The 1996 estimated cost was 94.70 Crores. 
+
+Kalagarh Training Institute , Kalagarh : This Institute runs refreshers training courses for the Officer of U.P. Irrigation, U.P. Public Works Department and Rural Engineering Departments. All practical aspects of efficient management in all fields is undertaken for future grooming of the Engineers. 
+
+Irrigation Research Organisation Roorkee : Research work is undertaken for better result oriented planning and implementaion of Irrigation Project. 
+
+Flood Protection Works : Uttar Pradesh has 294-36 lac hectares land out of which 73.36 hectares is flood prone area. Rs 57.11 Crores is proposed for 1999-2000 for budgetary sanctions.
+
+			
+				
+			
+			
+			
+	</div>
+	<hr/>
+
+
+
+<div onClick="openClose(mainNum,'a6')" class="main"><span class="mainLink"><b>History</b></a></span><span id="tick_a6" style="float:right">+</span></div>
+	<div id="a6" class="sublinks1">
+	<table class="gridtable">
+        	<tr>
+                	<td width="80"><b>1823</b></td>
+                	<td>First Irrigation Office opened at Saharanpur.</td>
+		</tr>
+		<tr>
+                	<td><b>1830</b></td>
+                	<td>Remodeling of old Moghul Canal on left bank of Yamuna taken up and commissioned as Eastern Yamuna Canal.</td>
+		</tr>
+		<tr>
+                	<td><b>1840</b></td>
+                	<td>Construction of Ganga Canal started and completed in 1854.</td>
+		</tr>
+		<tr>
+                	<td><b>1874</b></td>
+                	<td>Commissioning of Agra Canal.</td>
+		</tr>
+		<tr>
+                	<td><b>1878</b></td>
+                	<td>Commissioning of Lower Ganga Canal.</td>
+		</tr>
+		<tr>
+                	<td><b>1879</b></td>
+                	<td>Unprecedented famine took heavy toll of life in Bundelkhand.</td>
+		</tr>
+		<tr>
+                	<td><b>1880</b></td>
+                	<td>First Famine Commission set up.<br />
+			    Commission recommended that 40% of the cropped area should be provided with irrigation facilities.</td>
+		</tr>
+		<tr>
+                	<td colspan="2"><b>Central Public Works Department Established</b></td>
+           	</tr>
+		<tr>
+                	<td><b>1885</b></td>
+                	<td>Betwa Canal opened to Irrigate Jalaun and Hamirpur districts.</td>
+		</tr>
+		<tr>
+                	<td><b>1903</b></td>
+                	<td>Second Famine Commission setup.<br />
+			    Commission reiterated the provision of Irrigation facilities as above.</td>
+		</tr>
+		<tr>
+                	<td><b>1913</b></td>
+                	<td>Hydro Power Station on Upper Ganga Canal started at Bahadrabad (Near Hardwar).</td>
+		</tr>
+		<tr>
+                	<td><b>1930</b></td>
+                	<td>Tube well construction commended in Meerut District.</td>
+		</tr>
+		<tr>
+                	<td><b>1939</b></td>
+                	<td>Steam Power Station at Sohawal in District Faizabad to supply Power for Pump Canal on River Ghaghra.</td>
+		</tr>
+		<tr>
+                	<td><b>1939</b></td>
+                	<td>Separate Hydro Electric wing named "Hydel" was set up in the Department.</td>
+		</tr>
+		<tr>
+                	<td><b>1950</b></td>
+                	<td>Hydro Electric wing seperated, Electricity Department was set up</td>.
+		</tr>
+		<tr>
+                	<td><b>1945</b></td>
+                	<td>After IInd world war, emphasis on grow more food schemes. Investigation of new projects. Commercial policy underwent radical change at independence emphasis was on welfare of presentoverall deployment of State.</td>
+		</tr>
+		<tr>
+                	<td><b>1949</b></td>
+                	<td>Research Institute at Roorkee was formed.</td>
+		</tr>
+		<tr>
+                	<td><b>1954</b></td>
+                	<td>First flood work entrusted to Irrigation Deptartment.</td>
+		</tr>
+		
+		<tr>
+                	<td><b>1961</b></td>
+                	<td>Rihand Dam completed; Project cost Rs 28 crores.</td>
+		</tr>
+		<tr>
+                	<td><b>1961</b></td>
+                	<td>On completition of second five year plan, following major measures were taken-
+				<ul>
+					<li>Setting up of central Design Directorate at Lucknow.</li>
+					<li>Central Organisation at Lucknow for procurement of Store & Equipment at Lucknow.</li>
+					<li>Creation of Post of Chief Engineer for each major project.</li>
+					<li>Creation of Post of Engineer-in-Chief.</li>
+					<li>Creation of Post of Liasion Officer at New Delhi for dealing import licenses and foreign exchange.</li>
+				</ul></td>
+		</tr>
+		<tr>
+                	<td><b>1964</b></td>
+                	<td>Technical Audit Cell for Irrigation at Secretariat was set up.</td>
+		</tr>
+		<tr>
+                	<td><b>1965</b></td>
+                	<td>Separate Organisation for looking after construction and operation of State Tube-Wells under Director of Tube-Wells was set up.</td>
+		</tr>
+		<tr>
+                	<td><b>1966</b></td>
+                	<td>During severe drought in 1966, existing system of Irrigation was found inadequate, and a need was felt for lift irrigation. Lift irrigation schemes were take up to fight the unprecedented drought conditions.</td>
+		</tr>
+		<tr>
+                	<td><b>1968</b></td>
+                	<td>Directorate of Lift Irrigation was created.</td>
+		</tr>
+	</table>
+				
+			
+	</div>
+	<hr/>
+		
+		
+
+		
+		
+		
+<div onClick="openClose(mainNum,'a7')" class="main"><span class="mainLink"><b>Comments</b></a></span><span id="tick_a7" style="float:right">+</span></div>
+	<div id="a7" class="sublinks1">	
+		
+				<!--<Center>
+					<Form Method="Post" Action="mailto:spgoyal@nic.in" ENCTYPE="text/plain">
+					Name : <Input Type="text" Name="username"><br>
+					Email : <Input Type="text" Name="email"><br> Comments <br>
+					<Textarea Name="Comments" rows="10" cols="60" wrap="hard">
+					</Textarea>
+					<br>
+					<Input Type="submit" Value="Send">                  
+					<Input Type="reset" Value="Clear">
+					</Form>
+				</Center>-->
+				
+				<form name="afm_form_eba3fe44" id="afm_form_eba3fe44" action="http://free.allforms.mailjol.net/u/eba3fe44.php" method="POST" style="margin: 0px">
+					<table border="0" cellpadding="6" cellspacing="0" style="text-align: left; width="400">
+						<tr>
+							<td colspan="2" style="padding: 8px; font-size:12px; font-family:georgia, arial, helvetica, sans-serif; color: #000000"></td>
+						</tr>
+						<tr>
+							<td width="100%" style="font-size:12px; font-family:georgia, arial, helvetica, sans-serif; font-weight: bold; padding-left: 20px; padding-right: 20px; color: #000000">Name: *<br><input type="Text" name="Name:" size="65" style="font-size:12px; font-family:georgia, arial, helvetica, sans-serif"></td>
+						</tr>
+						<tr>
+							<td width="100%" style="font-size:12px; font-family:georgia, arial, helvetica, sans-serif; font-weight: bold; padding-left: 20px; padding-right: 20px; color: #000000">Email: *<br><input type="Text" name="Email:" size="65" style="font-size:12px; font-family:georgia, arial, helvetica, sans-serif"></td>
+						</tr>
+						<tr>
+							<td width="100%" style="font-size:12px; font-family:georgia, arial, helvetica, sans-serif; font-weight: bold; padding-left: 20px; padding-right: 20px; color: #000000">Message: *<br><textarea rows="4" cols="98" style="font-size:12px; font-family:georgia, arial, helvetica, sans-serif" name="Message:"></textarea></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center" style="padding: 8px"><input type="submit" name="submit" value="Submit" style="font-size:12px; font-family:georgia, arial, helvetica, sans-serif"> &nbsp;<input type="reset" name="reset" value="Reset" style="font-size:12px; font-family:georgia, arial, helvetica, sans-serif"></td>
+						</tr>
+					</table>
+				</form>
+				
+	</div>
+	<hr/>
+
+    </td>
+	</tr>
+</table>
+  
+  
+ <br />
+
+  
+<table align="center" border="0" width="600" cellpadding="4" cellspacing="2" frame="void" rules="rows" style="background:#ffffff; color:#000000;">
+	<tr align="center">
+		<td>
+
+
+	<a href="http://hit-counter.info"><img style="border: 0px solid ; display: inline;" alt="hit counter" 
+	src="http://hit-counter.info/hit.php?id=502081&counter=26"></a><br />
+
+		
+		</td>
+	</tr>
+ </table>
+
+</body>
+
+</html>
+
